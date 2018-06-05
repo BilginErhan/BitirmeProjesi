@@ -1,0 +1,239 @@
+﻿@using Fuar_Organizasyon.Models
+
+
+@model Tuple<tbl_Kullanici,tbl_Kisiler>
+
+@{
+    ViewBag.Title = "Kayit";
+}
+
+<h2>Kayit</h2>
+
+
+@using (Html.BeginForm("Kayit", "Home",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    
+    <!--Kullanıcı bilgieri-->
+    <div class="form-horizontal">
+        <h4>tbl_Kullanici</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Item1.kullaniciAdi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Item1.kullaniciAdi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Item1.kullaniciAdi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Item1.kullaniciSifre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.Item1.kullaniciSifre,  new { @class = "form-control"  })
+                @Html.ValidationMessageFor(model => model.Item1.kullaniciSifre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Şifre Tekrar", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Password("sifre",null, new { @class = "form-control" } )
+                @Html.ValidationMessageFor(model => model.Item1.kullaniciSifre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- Kişisel bilgiler-->
+
+        <div class="form-horizontal">
+            <h4>tbl_Kisiler</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Item2.kisiIsim, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Item2.kisiIsim, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Item2.kisiIsim, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Item2.kisiSoyisim, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Item2.kisiSoyisim, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Item2.kisiSoyisim, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Item2.kisiTelefon, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Item2.kisiTelefon, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Item2.kisiTelefon, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Item2.kisiTcNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Item2.kisiTcNo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Item2.kisiTcNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Item2.SehirId, "SehirId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model=>model.Item2.SehirId, (List<SelectListItem>)ViewBag.Sehirler, "Şehir Seçiniz", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Item2.SehirId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Item2.ilceId, "ilceId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model=>model.Item2.ilceId, Enumerable.Empty<SelectListItem>(),"İlçe Seçiniz", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Item2.ilceId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Item2.SemtMahId, "SemtMahId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model=>model.Item2.SemtMahId, Enumerable.Empty<SelectListItem>(),"Semt Mahalle Seçiniz", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Item2.SemtMahId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+                
+            <div class="form-group">
+                @Html.LabelFor(model => model.Item2.kisiMail, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Item2.kisiMail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Item2.kisiMail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Item2.departmanId, "departmanId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model=>model.Item2.departmanId,(List<SelectListItem>)ViewBag.Departman,"Departman Seçiniz", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Item2.departmanId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Item2.pozisyonId, "pozisyonId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model=>model.Item2.pozisyonId, (List<SelectListItem>)ViewBag.Pozisyon,"Pozisyon Seçiniz", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Item2.pozisyonId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Item2.kullaniciTuru, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model=>model.Item2.kullaniciTuru, (List<SelectListItem>)ViewBag.KullaniciTuru,"Kullanıcı Türünü Seçiniz", htmlAttributes : new { @class = "form-control" } )
+                    @Html.ValidationMessageFor(model => model.Item2.kullaniciTuru, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Kayıt Ol" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //İlçe getime fonksiyonu
+        $('#Item2_SehirId').change(function () {
+            //ilçe dropdownlist içerisini boşaltma
+            var x = document.getElementById("Item2_ilceId");
+            for (var i = x.options.length - 1; i >= 0; i--) {
+                x.options[i] = null;
+            }
+
+            var SehirId = $(this).val();
+
+            if (SehirId != null && SehirId != '') {
+                $.ajax({
+                    type: "post",
+                    url: '@Url.Action("ilce_getir", "Home")',
+                    data: { SehirId: SehirId },
+                    success: function (ilceler) {
+                        $.each(ilceler, function (index, ilce) {
+                            $('#Item2_ilceId').append($('<option/>', {
+                                value: ilce.ilceId,
+                                text: ilce.IlceAdi
+                            }));
+                        });
+                    },
+                    error: function () {
+
+                        alert("Hata");
+                    },
+                    beforeSend: function () {
+
+                    },
+                    complete: function () {
+
+                    }
+                });
+            }
+        });
+
+
+
+        //semt mahalle getirme fonksiyonu
+        $('#Item2_ilceId').change(function () {
+            //ilçe dropdownlist içerisini boşaltma
+            var x = document.getElementById("Item2_SemtMahId");
+            for(var i = x.options.length-1; i >= 0; i--) {
+                x.options[i] = null;
+            }
+
+            var ilceId = $(this).val();
+
+            if (ilceId != null && ilceId != '') {
+                $.ajax({
+                    type: "post",
+                    url: '@Url.Action("mahalle_getir", "Home")',
+                    data: { ilceId: ilceId },
+                    success: function (mahalleler) {
+                        $.each(mahalleler, function (index, mahalle) {
+                            $('#Item2_SemtMahId').append($('<option/>', {
+                                value: mahalle.SemtMahId,
+                                text: mahalle.MahalleAdi
+                            }));
+                        });
+                    },
+                    error: function () {
+
+                        alert("Hata");
+                    },
+                    beforeSend: function () {
+
+                    },
+                    complete: function () {
+
+                    }
+                });
+            }
+        });
+    });
+</script>
+}
+
+

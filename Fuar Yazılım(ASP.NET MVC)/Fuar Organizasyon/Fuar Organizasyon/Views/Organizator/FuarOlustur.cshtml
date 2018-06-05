@@ -1,0 +1,202 @@
+﻿@model Fuar_Organizasyon.Models.tbl_Fuar
+
+@{
+    ViewBag.Title = "FuarOlustur";
+    Layout = "~/Views/Shared/_LayoutorgPanel.cshtml";
+}
+
+<h2>FuarOlustur</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>tbl_Fuar</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.fuarAdi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fuarAdi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fuarAdi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SehirId, "SehirId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("SehirId", (List<SelectListItem>)ViewBag.Sehirler, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SehirId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ilceId, "ilceId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ilceId", Enumerable.Empty<SelectListItem>(), htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ilceId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SemtMahId, "SemtMahId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("SemtMahId", Enumerable.Empty<SelectListItem>(), htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SemtMahId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fuarTelNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fuarTelNo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fuarTelNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fuarFax, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fuarFax, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fuarFax, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fuarBaslamaTarih, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fuarBaslamaTarih, new { htmlAttributes = new { @class = "form-control" ,@type= "datetime-local" } })
+                @Html.ValidationMessageFor(model => model.fuarBaslamaTarih, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fuarBitisTarih, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fuarBitisTarih, new { htmlAttributes = new { @class = "form-control", @type = "datetime-local" } })
+                @Html.ValidationMessageFor(model => model.fuarBitisTarih, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fuarFacebookUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fuarFacebookUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fuarFacebookUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fuarInstagramUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fuarInstagramUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fuarInstagramUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fuarTwitterUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fuarTwitterUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fuarTwitterUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        //İlçe getime fonksiyonu
+        $('#SehirId').change(function () {
+            //ilçe dropdownlist içerisini boşaltma
+            var x = document.getElementById("ilceId");
+            for (var i = x.options.length - 1; i >= 0; i--) {
+                x.options[i] = null;
+            }
+
+            var SehirId = $(this).val();
+
+            if (SehirId != null && SehirId != '') {
+                $.ajax({
+                    type: "post",
+                    url: '@Url.Action("ilce_getir", "Home")',
+                    data: { SehirId: SehirId },
+                    success: function (ilceler) {
+                        $.each(ilceler, function (index, ilce) {
+                            $('#ilceId').append($('<option/>', {
+                                value: ilce.ilceId,
+                                text: ilce.IlceAdi
+                            }));
+                        });
+                    },
+                    error: function () {
+
+                        alert("Hata");
+                    },
+                    beforeSend: function () {
+
+                    },
+                    complete: function () {
+
+                    }
+                });
+            }
+        });
+
+
+
+        //semt mahalle getirme fonksiyonu
+        $('#ilceId').change(function () {
+            //ilçe dropdownlist içerisini boşaltma
+            var x = document.getElementById("SemtMahId");
+            for(var i = x.options.length-1; i >= 0; i--) {
+                x.options[i] = null;
+            }
+
+            var ilceId = $(this).val();
+
+            if (ilceId != null && ilceId != '') {
+                $.ajax({
+                    type: "post",
+                    url: '@Url.Action("mahalle_getir", "Home")',
+                    data: { ilceId: ilceId },
+                    success: function (mahalleler) {
+                        $.each(mahalleler, function (index, mahalle) {
+                            $('#SemtMahId').append($('<option/>', {
+                                value: mahalle.SemtMahId,
+                                text: mahalle.MahalleAdi
+                            }));
+                        });
+                    },
+                    error: function () {
+
+                        alert("Hata");
+                    },
+                    beforeSend: function () {
+
+                    },
+                    complete: function () {
+
+                    }
+                });
+            }
+        });
+    });
+    </script>
+}

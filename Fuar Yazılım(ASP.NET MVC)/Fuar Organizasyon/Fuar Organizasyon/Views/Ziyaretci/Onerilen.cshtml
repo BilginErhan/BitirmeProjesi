@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Fuar_Organizasyon.Models.tbl_KatilimciFirma>
+
+@{
+    ViewBag.Title = "Onerilen";
+    Layout = "~/Views/Shared/_LayoutziyaretciPanel.cshtml";
+}
+
+<h2>Onerilen 5 Adet Firma Bilgileri</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.kFirmaAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kWebSiteUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kTelefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kFax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kMail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kResimUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kCalisanSayisi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kOnay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ilceler.IlceAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sehirler.SehirAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SemtMah.SemtAdi)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.kFirmaAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kWebSiteUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kTelefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kFax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kMail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kResimUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kCalisanSayisi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kOnay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ilceler.IlceAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sehirler.SehirAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SemtMah.SemtAdi)
+            </td>
+        </tr>
+    }
+
+</table>

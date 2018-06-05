@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="51fe3880eaae4ab4a64b682042080668" Name="Diagram1">
+        <EntityTypeShape EntityType="FuarDatabaseModel.Ilceler" Width="1.5" PointX="3" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.Sehirler" Width="1.5" PointX="0.75" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.SemtMah" Width="1.5" PointX="5.25" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_Amac" Width="1.5" PointX="10.5" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_BasinFirma" Width="1.5" PointX="7.5" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_BasinFirmaCalisanlar" Width="1.5" PointX="9.75" PointY="43.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_BasinKatildigiFuarlar" Width="1.5" PointX="15.75" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_Departman" Width="1.5" PointX="5.25" PointY="39.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_FaaliyetTuru" Width="1.5" PointX="7.5" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_FaatliyetAlani" Width="1.5" PointX="5.25" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_Fuar" Width="1.5" PointX="10.5" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_FuarBasinBulteni" Width="1.5" PointX="12.75" PointY="40.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_FuarKapsamAlani" Width="1.5" PointX="15.75" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_FuarKapsamTuru" Width="1.5" PointX="18.75" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_FuarKatilimciProfil" Width="1.5" PointX="15.75" PointY="41.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_FuarResimler" Width="1.5" PointX="12.75" PointY="45.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_FuarZiyaretciProfil" Width="1.5" PointX="18.75" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_KatilimciFaaliyetAlani" Width="1.5" PointX="9.75" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_KatilimciFaaliyetTuru" Width="1.5" PointX="9.75" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_KatilimciFirma" Width="1.5" PointX="7.5" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_KatilimciFirmaCalisanlar" Width="1.5" PointX="9.75" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_KatilimciKatildigiFuarlar" Width="1.5" PointX="18.75" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_KatilimciKatilimAmac" Width="1.5" PointX="12.75" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_KatilimciProfil" Width="1.5" PointX="13.5" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_Kisiler" Width="1.5" PointX="7.5" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_Kullanici" Width="1.5" PointX="5.25" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_OrganizatorFaaliyetAlani" Width="1.5" PointX="21.75" PointY="36.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_OrganizatorFaaliyetTuru" Width="1.5" PointX="21.75" PointY="39.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_OrganizatorFirma" Width="1.5" PointX="13.5" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_OrganizatorFirmaCalisanlar" Width="1.5" PointX="15.75" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_OrganizatorKatildigiFuarlar" Width="1.5" PointX="18.75" PointY="41.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_Pozisyon" Width="1.5" PointX="5.25" PointY="44.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_UrunGruplari" Width="1.5" PointX="13.5" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_ZiyaretciFaaliyetAlani" Width="1.5" PointX="15.75" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_ZiyaretciFaaliyetTuru" Width="1.5" PointX="15.75" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_ZiyaretciFirma" Width="1.5" PointX="13.5" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_ZiyaretciFirmaCalisanlar" Width="1.5" PointX="21.75" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_ZiyaretciIlgilendigiUrun" Width="1.5" PointX="15.75" PointY="32.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_ZiyaretciKatildigiFuarlar" Width="1.5" PointX="21.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_ZiyaretciKatilimAmaci" Width="1.5" PointX="18.75" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FuarDatabaseModel.tbl_ZiyaretciProfil" Width="1.5" PointX="16.5" PointY="23.75" IsExpanded="true" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_Ilceler_Sehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_SemtMah_Ilceler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_BasinFirma_Ilceler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_Fuar_Ilceler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_KatilimciFirma_Ilceler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_Kisiler_Ilceler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_OrganizatorFirma_Ilceler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciFirma_Ilceler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_BasinFirma_Sehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_Fuar_Sehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_KatilimciFirma_Sehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_Kisiler_Sehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_OrganizatorFirma_Sehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciFirma_Sehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_BasinFirma_SemtMah" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_Fuar_SemtMah" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_KatilimciFirma_SemtMah" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_Kisiler_SemtMah" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_OrganizatorFirma_SemtMah" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciFirma_SemtMah" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_KatilimciKatilimAmac_tbl_Amac" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciKatilimAmaci_tbl_Amac" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_BasinFirmaCalisanlar_tbl_BasinFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_BasinKatildigiFuarlar_tbl_BasinFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_BasinFirmaCalisanlar_tbl_Kisiler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_BasinKatildigiFuarlar_tbl_Fuar" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_Kisiler_tbl_Departman" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_FaaliyetTuru_tbl_FaatliyetAlani" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_FuarKapsamTuru_tbl_FaaliyetTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_KatilimciFaaliyetTuru_tbl_FaaliyetTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_OrganizatorFaaliyetTuru_tbl_FaaliyetTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciFaaliyetAlani_tbl_FaaliyetTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_FuarKapsamAlani_tbl_FaatliyetAlani" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_KatilimciFaaliyetAlani_tbl_FaatliyetAlani" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_OrganizatorFaaliyetAlani_tbl_FaatliyetAlani" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciFaaliyetTuru_tbl_FaatliyetAlani" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_FuarBasinBulteni_tbl_Fuar" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_FuarKapsamAlani_tbl_Fuar" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_FuarKapsamTuru_tbl_Fuar" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_FuarKatilimciProfil_tbl_Fuar" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_FuarResimler_tbl_Fuar" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_FuarZiyaretciProfil_tbl_Fuar" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_KatilimciKatildigiFuarlar_tbl_Fuar" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_OrganizatorKatildigiFuarlar_tbl_Fuar" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciKatildigiFuarlar_tbl_Fuar" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_FuarKatilimciProfil_tbl_KatilimciProfil" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_FuarZiyaretciProfil_tbl_ZiyaretciProfil" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_KatilimciFaaliyetAlani_tbl_KatilimciFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_KatilimciFaaliyetTuru_tbl_KatilimciFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_KatilimciFirmaCalisanlar_tbl_KatilimciFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_KatilimciKatildigiFuarlar_tbl_KatilimciFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_KatilimciKatilimAmac_tbl_KatilimciFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_KatilimciFirmaCalisanlar_tbl_Kisiler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_Kisiler_tbl_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_Kisiler_tbl_Pozisyon" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_OrganizatorFirmaCalisanlar_tbl_Kisiler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciFirmaCalisanlar_tbl_Kisiler" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_OrganizatorFaaliyetAlani_tbl_OrganizatorFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_OrganizatorFaaliyetTuru_tbl_OrganizatorFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_OrganizatorFirmaCalisanlar_tbl_OrganizatorFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_OrganizatorKatildigiFuarlar_tbl_OrganizatorFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciIlgilendigiUrun_tbl_UrunGruplari" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciFaaliyetAlani_tbl_ZiyaretciFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciFaaliyetTuru_tbl_ZiyaretciFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciFirmaCalisanlar_tbl_ZiyaretciFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciIlgilendigiUrun_tbl_ZiyaretciFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciKatildigiFuarlar_tbl_ZiyaretciFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="FuarDatabaseModel.FK_tbl_ZiyaretciKatilimAmaci_tbl_ZiyaretciFirma" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

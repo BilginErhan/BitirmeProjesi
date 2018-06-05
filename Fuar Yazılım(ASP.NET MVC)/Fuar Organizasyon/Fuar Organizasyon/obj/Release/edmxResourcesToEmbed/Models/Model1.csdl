@@ -1,0 +1,1675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FuarDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ilceler">
+    <Key>
+      <PropertyRef Name="ilceId" />
+    </Key>
+    <Property Name="ilceId" Type="Int32" Nullable="false" />
+    <Property Name="SehirId" Type="Int32" Nullable="false" />
+    <Property Name="IlceAdi" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SehirAdi" Type="String" MaxLength="55" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Sehirler" Relationship="Self.FK_Ilceler_Sehirler" FromRole="Ilceler" ToRole="Sehirler" />
+    <NavigationProperty Name="SemtMah" Relationship="Self.FK_SemtMah_Ilceler" FromRole="Ilceler" ToRole="SemtMah" />
+    <NavigationProperty Name="tbl_BasinFirma" Relationship="Self.FK_tbl_BasinFirma_Ilceler" FromRole="Ilceler" ToRole="tbl_BasinFirma" />
+    <NavigationProperty Name="tbl_Fuar" Relationship="Self.FK_tbl_Fuar_Ilceler" FromRole="Ilceler" ToRole="tbl_Fuar" />
+    <NavigationProperty Name="tbl_KatilimciFirma" Relationship="Self.FK_tbl_KatilimciFirma_Ilceler" FromRole="Ilceler" ToRole="tbl_KatilimciFirma" />
+    <NavigationProperty Name="tbl_Kisiler" Relationship="Self.FK_tbl_Kisiler_Ilceler" FromRole="Ilceler" ToRole="tbl_Kisiler" />
+    <NavigationProperty Name="tbl_OrganizatorFirma" Relationship="Self.FK_tbl_OrganizatorFirma_Ilceler" FromRole="Ilceler" ToRole="tbl_OrganizatorFirma" />
+    <NavigationProperty Name="tbl_ZiyaretciFirma" Relationship="Self.FK_tbl_ZiyaretciFirma_Ilceler" FromRole="Ilceler" ToRole="tbl_ZiyaretciFirma" />
+  </EntityType>
+  <EntityType Name="Sehirler">
+    <Key>
+      <PropertyRef Name="SehirId" />
+    </Key>
+    <Property Name="SehirId" Type="Int32" Nullable="false" />
+    <Property Name="SehirAdi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PlakaNo" Type="Byte" Nullable="false" />
+    <Property Name="TelefonKodu" Type="Int32" Nullable="false" />
+    <Property Name="RowNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ilceler" Relationship="Self.FK_Ilceler_Sehirler" FromRole="Sehirler" ToRole="Ilceler" />
+    <NavigationProperty Name="tbl_BasinFirma" Relationship="Self.FK_tbl_BasinFirma_Sehirler" FromRole="Sehirler" ToRole="tbl_BasinFirma" />
+    <NavigationProperty Name="tbl_Fuar" Relationship="Self.FK_tbl_Fuar_Sehirler" FromRole="Sehirler" ToRole="tbl_Fuar" />
+    <NavigationProperty Name="tbl_KatilimciFirma" Relationship="Self.FK_tbl_KatilimciFirma_Sehirler" FromRole="Sehirler" ToRole="tbl_KatilimciFirma" />
+    <NavigationProperty Name="tbl_Kisiler" Relationship="Self.FK_tbl_Kisiler_Sehirler" FromRole="Sehirler" ToRole="tbl_Kisiler" />
+    <NavigationProperty Name="tbl_OrganizatorFirma" Relationship="Self.FK_tbl_OrganizatorFirma_Sehirler" FromRole="Sehirler" ToRole="tbl_OrganizatorFirma" />
+    <NavigationProperty Name="tbl_ZiyaretciFirma" Relationship="Self.FK_tbl_ZiyaretciFirma_Sehirler" FromRole="Sehirler" ToRole="tbl_ZiyaretciFirma" />
+  </EntityType>
+  <EntityType Name="SemtMah">
+    <Key>
+      <PropertyRef Name="SemtMahId" />
+    </Key>
+    <Property Name="SemtMahId" Type="Int32" Nullable="false" />
+    <Property Name="SemtAdi" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MahalleAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PostaKodu" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ilceId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ilceler" Relationship="Self.FK_SemtMah_Ilceler" FromRole="SemtMah" ToRole="Ilceler" />
+    <NavigationProperty Name="tbl_BasinFirma" Relationship="Self.FK_tbl_BasinFirma_SemtMah" FromRole="SemtMah" ToRole="tbl_BasinFirma" />
+    <NavigationProperty Name="tbl_Fuar" Relationship="Self.FK_tbl_Fuar_SemtMah" FromRole="SemtMah" ToRole="tbl_Fuar" />
+    <NavigationProperty Name="tbl_KatilimciFirma" Relationship="Self.FK_tbl_KatilimciFirma_SemtMah" FromRole="SemtMah" ToRole="tbl_KatilimciFirma" />
+    <NavigationProperty Name="tbl_Kisiler" Relationship="Self.FK_tbl_Kisiler_SemtMah" FromRole="SemtMah" ToRole="tbl_Kisiler" />
+    <NavigationProperty Name="tbl_OrganizatorFirma" Relationship="Self.FK_tbl_OrganizatorFirma_SemtMah" FromRole="SemtMah" ToRole="tbl_OrganizatorFirma" />
+    <NavigationProperty Name="tbl_ZiyaretciFirma" Relationship="Self.FK_tbl_ZiyaretciFirma_SemtMah" FromRole="SemtMah" ToRole="tbl_ZiyaretciFirma" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_Amac">
+    <Key>
+      <PropertyRef Name="amacId" />
+    </Key>
+    <Property Name="amacId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="amacAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_KatilimciKatilimAmac" Relationship="Self.FK_tbl_KatilimciKatilimAmac_tbl_Amac" FromRole="tbl_Amac" ToRole="tbl_KatilimciKatilimAmac" />
+    <NavigationProperty Name="tbl_ZiyaretciKatilimAmaci" Relationship="Self.FK_tbl_ZiyaretciKatilimAmaci_tbl_Amac" FromRole="tbl_Amac" ToRole="tbl_ZiyaretciKatilimAmaci" />
+  </EntityType>
+  <EntityType Name="tbl_BasinFirma">
+    <Key>
+      <PropertyRef Name="bId" />
+    </Key>
+    <Property Name="bId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bFirmaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="bWebSiteUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="bTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="bFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="bMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="bResimUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SehirId" Type="Int32" Nullable="false" />
+    <Property Name="ilceId" Type="Int32" Nullable="false" />
+    <Property Name="SemtMahId" Type="Int32" Nullable="false" />
+    <Property Name="bOnay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ilceler" Relationship="Self.FK_tbl_BasinFirma_Ilceler" FromRole="tbl_BasinFirma" ToRole="Ilceler" />
+    <NavigationProperty Name="Sehirler" Relationship="Self.FK_tbl_BasinFirma_Sehirler" FromRole="tbl_BasinFirma" ToRole="Sehirler" />
+    <NavigationProperty Name="SemtMah" Relationship="Self.FK_tbl_BasinFirma_SemtMah" FromRole="tbl_BasinFirma" ToRole="SemtMah" />
+    <NavigationProperty Name="tbl_BasinFirmaCalisanlar" Relationship="Self.FK_tbl_BasinFirmaCalisanlar_tbl_BasinFirma" FromRole="tbl_BasinFirma" ToRole="tbl_BasinFirmaCalisanlar" />
+    <NavigationProperty Name="tbl_BasinKatildigiFuarlar" Relationship="Self.FK_tbl_BasinKatildigiFuarlar_tbl_BasinFirma" FromRole="tbl_BasinFirma" ToRole="tbl_BasinKatildigiFuarlar" />
+  </EntityType>
+  <EntityType Name="tbl_BasinFirmaCalisanlar">
+    <Key>
+      <PropertyRef Name="bCalisanlarId" />
+    </Key>
+    <Property Name="bCalisanlarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bId" Type="Int32" Nullable="false" />
+    <Property Name="kisiId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_BasinFirma" Relationship="Self.FK_tbl_BasinFirmaCalisanlar_tbl_BasinFirma" FromRole="tbl_BasinFirmaCalisanlar" ToRole="tbl_BasinFirma" />
+    <NavigationProperty Name="tbl_Kisiler" Relationship="Self.FK_tbl_BasinFirmaCalisanlar_tbl_Kisiler" FromRole="tbl_BasinFirmaCalisanlar" ToRole="tbl_Kisiler" />
+  </EntityType>
+  <EntityType Name="tbl_BasinKatildigiFuarlar">
+    <Key>
+      <PropertyRef Name="bKatildigiFuarId" />
+    </Key>
+    <Property Name="bKatildigiFuarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bId" Type="Int32" Nullable="false" />
+    <Property Name="fuarId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_BasinFirma" Relationship="Self.FK_tbl_BasinKatildigiFuarlar_tbl_BasinFirma" FromRole="tbl_BasinKatildigiFuarlar" ToRole="tbl_BasinFirma" />
+    <NavigationProperty Name="tbl_Fuar" Relationship="Self.FK_tbl_BasinKatildigiFuarlar_tbl_Fuar" FromRole="tbl_BasinKatildigiFuarlar" ToRole="tbl_Fuar" />
+  </EntityType>
+  <EntityType Name="tbl_Departman">
+    <Key>
+      <PropertyRef Name="departmanId" />
+    </Key>
+    <Property Name="departmanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="departmanAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_Kisiler" Relationship="Self.FK_tbl_Kisiler_tbl_Departman" FromRole="tbl_Departman" ToRole="tbl_Kisiler" />
+  </EntityType>
+  <EntityType Name="tbl_FaaliyetTuru">
+    <Key>
+      <PropertyRef Name="faaliyetTuruId" />
+    </Key>
+    <Property Name="faaliyetTuruId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="faaliyetAlaniId" Type="Int32" Nullable="false" />
+    <Property Name="faaliyetTuruAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_FaatliyetAlani" Relationship="Self.FK_tbl_FaaliyetTuru_tbl_FaatliyetAlani" FromRole="tbl_FaaliyetTuru" ToRole="tbl_FaatliyetAlani" />
+    <NavigationProperty Name="tbl_FuarKapsamTuru" Relationship="Self.FK_tbl_FuarKapsamTuru_tbl_FaaliyetTuru" FromRole="tbl_FaaliyetTuru" ToRole="tbl_FuarKapsamTuru" />
+    <NavigationProperty Name="tbl_KatilimciFaaliyetTuru" Relationship="Self.FK_tbl_KatilimciFaaliyetTuru_tbl_FaaliyetTuru" FromRole="tbl_FaaliyetTuru" ToRole="tbl_KatilimciFaaliyetTuru" />
+    <NavigationProperty Name="tbl_OrganizatorFaaliyetTuru" Relationship="Self.FK_tbl_OrganizatorFaaliyetTuru_tbl_FaaliyetTuru" FromRole="tbl_FaaliyetTuru" ToRole="tbl_OrganizatorFaaliyetTuru" />
+    <NavigationProperty Name="tbl_ZiyaretciFaaliyetAlani" Relationship="Self.FK_tbl_ZiyaretciFaaliyetAlani_tbl_FaaliyetTuru" FromRole="tbl_FaaliyetTuru" ToRole="tbl_ZiyaretciFaaliyetAlani" />
+  </EntityType>
+  <EntityType Name="tbl_FaatliyetAlani">
+    <Key>
+      <PropertyRef Name="faaliyetAlaniId" />
+    </Key>
+    <Property Name="faaliyetAlaniId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="faaliyetAlaniAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_FaaliyetTuru" Relationship="Self.FK_tbl_FaaliyetTuru_tbl_FaatliyetAlani" FromRole="tbl_FaatliyetAlani" ToRole="tbl_FaaliyetTuru" />
+    <NavigationProperty Name="tbl_FuarKapsamAlani" Relationship="Self.FK_tbl_FuarKapsamAlani_tbl_FaatliyetAlani" FromRole="tbl_FaatliyetAlani" ToRole="tbl_FuarKapsamAlani" />
+    <NavigationProperty Name="tbl_KatilimciFaaliyetAlani" Relationship="Self.FK_tbl_KatilimciFaaliyetAlani_tbl_FaatliyetAlani" FromRole="tbl_FaatliyetAlani" ToRole="tbl_KatilimciFaaliyetAlani" />
+    <NavigationProperty Name="tbl_OrganizatorFaaliyetAlani" Relationship="Self.FK_tbl_OrganizatorFaaliyetAlani_tbl_FaatliyetAlani" FromRole="tbl_FaatliyetAlani" ToRole="tbl_OrganizatorFaaliyetAlani" />
+    <NavigationProperty Name="tbl_ZiyaretciFaaliyetTuru" Relationship="Self.FK_tbl_ZiyaretciFaaliyetTuru_tbl_FaatliyetAlani" FromRole="tbl_FaatliyetAlani" ToRole="tbl_ZiyaretciFaaliyetTuru" />
+  </EntityType>
+  <EntityType Name="tbl_Fuar">
+    <Key>
+      <PropertyRef Name="fuarId" />
+    </Key>
+    <Property Name="fuarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fuarAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SehirId" Type="Int32" Nullable="false" />
+    <Property Name="ilceId" Type="Int32" Nullable="false" />
+    <Property Name="SemtMahId" Type="Int32" Nullable="false" />
+    <Property Name="fuarTelNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fuarFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fuarBaslamaTarih" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fuarBitisTarih" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fuarFacebookUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fuarInstagramUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fuarTwitterUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fuarOnay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ilceler" Relationship="Self.FK_tbl_Fuar_Ilceler" FromRole="tbl_Fuar" ToRole="Ilceler" />
+    <NavigationProperty Name="Sehirler" Relationship="Self.FK_tbl_Fuar_Sehirler" FromRole="tbl_Fuar" ToRole="Sehirler" />
+    <NavigationProperty Name="SemtMah" Relationship="Self.FK_tbl_Fuar_SemtMah" FromRole="tbl_Fuar" ToRole="SemtMah" />
+    <NavigationProperty Name="tbl_BasinKatildigiFuarlar" Relationship="Self.FK_tbl_BasinKatildigiFuarlar_tbl_Fuar" FromRole="tbl_Fuar" ToRole="tbl_BasinKatildigiFuarlar" />
+    <NavigationProperty Name="tbl_FuarBasinBulteni" Relationship="Self.FK_tbl_FuarBasinBulteni_tbl_Fuar" FromRole="tbl_Fuar" ToRole="tbl_FuarBasinBulteni" />
+    <NavigationProperty Name="tbl_FuarKapsamAlani" Relationship="Self.FK_tbl_FuarKapsamAlani_tbl_Fuar" FromRole="tbl_Fuar" ToRole="tbl_FuarKapsamAlani" />
+    <NavigationProperty Name="tbl_FuarKapsamTuru" Relationship="Self.FK_tbl_FuarKapsamTuru_tbl_Fuar" FromRole="tbl_Fuar" ToRole="tbl_FuarKapsamTuru" />
+    <NavigationProperty Name="tbl_FuarKatilimciProfil" Relationship="Self.FK_tbl_FuarKatilimciProfil_tbl_Fuar" FromRole="tbl_Fuar" ToRole="tbl_FuarKatilimciProfil" />
+    <NavigationProperty Name="tbl_FuarResimler" Relationship="Self.FK_tbl_FuarResimler_tbl_Fuar" FromRole="tbl_Fuar" ToRole="tbl_FuarResimler" />
+    <NavigationProperty Name="tbl_FuarZiyaretciProfil" Relationship="Self.FK_tbl_FuarZiyaretciProfil_tbl_Fuar" FromRole="tbl_Fuar" ToRole="tbl_FuarZiyaretciProfil" />
+    <NavigationProperty Name="tbl_KatilimciKatildigiFuarlar" Relationship="Self.FK_tbl_KatilimciKatildigiFuarlar_tbl_Fuar" FromRole="tbl_Fuar" ToRole="tbl_KatilimciKatildigiFuarlar" />
+    <NavigationProperty Name="tbl_OrganizatorKatildigiFuarlar" Relationship="Self.FK_tbl_OrganizatorKatildigiFuarlar_tbl_Fuar" FromRole="tbl_Fuar" ToRole="tbl_OrganizatorKatildigiFuarlar" />
+    <NavigationProperty Name="tbl_ZiyaretciKatildigiFuarlar" Relationship="Self.FK_tbl_ZiyaretciKatildigiFuarlar_tbl_Fuar" FromRole="tbl_Fuar" ToRole="tbl_ZiyaretciKatildigiFuarlar" />
+  </EntityType>
+  <EntityType Name="tbl_FuarBasinBulteni">
+    <Key>
+      <PropertyRef Name="fBultenId" />
+    </Key>
+    <Property Name="fBultenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fuarId" Type="Int32" Nullable="false" />
+    <Property Name="basinBaslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basinIcerik" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_Fuar" Relationship="Self.FK_tbl_FuarBasinBulteni_tbl_Fuar" FromRole="tbl_FuarBasinBulteni" ToRole="tbl_Fuar" />
+  </EntityType>
+  <EntityType Name="tbl_FuarKapsamAlani">
+    <Key>
+      <PropertyRef Name="fKapsamAlaniId" />
+    </Key>
+    <Property Name="fKapsamAlaniId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fuarId" Type="Int32" Nullable="false" />
+    <Property Name="faaliyetAlaniId" Type="Int32" />
+    <Property Name="diger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_FaatliyetAlani" Relationship="Self.FK_tbl_FuarKapsamAlani_tbl_FaatliyetAlani" FromRole="tbl_FuarKapsamAlani" ToRole="tbl_FaatliyetAlani" />
+    <NavigationProperty Name="tbl_Fuar" Relationship="Self.FK_tbl_FuarKapsamAlani_tbl_Fuar" FromRole="tbl_FuarKapsamAlani" ToRole="tbl_Fuar" />
+  </EntityType>
+  <EntityType Name="tbl_FuarKapsamTuru">
+    <Key>
+      <PropertyRef Name="fKapsamTuruId" />
+    </Key>
+    <Property Name="fKapsamTuruId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fuarId" Type="Int32" Nullable="false" />
+    <Property Name="faaliyetTuruId" Type="Int32" />
+    <Property Name="diger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_FaaliyetTuru" Relationship="Self.FK_tbl_FuarKapsamTuru_tbl_FaaliyetTuru" FromRole="tbl_FuarKapsamTuru" ToRole="tbl_FaaliyetTuru" />
+    <NavigationProperty Name="tbl_Fuar" Relationship="Self.FK_tbl_FuarKapsamTuru_tbl_Fuar" FromRole="tbl_FuarKapsamTuru" ToRole="tbl_Fuar" />
+  </EntityType>
+  <EntityType Name="tbl_FuarKatilimciProfil">
+    <Key>
+      <PropertyRef Name="fKatilimId" />
+    </Key>
+    <Property Name="fKatilimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fuarId" Type="Int32" Nullable="false" />
+    <Property Name="kProfilId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Fuar" Relationship="Self.FK_tbl_FuarKatilimciProfil_tbl_Fuar" FromRole="tbl_FuarKatilimciProfil" ToRole="tbl_Fuar" />
+    <NavigationProperty Name="tbl_KatilimciProfil" Relationship="Self.FK_tbl_FuarKatilimciProfil_tbl_KatilimciProfil" FromRole="tbl_FuarKatilimciProfil" ToRole="tbl_KatilimciProfil" />
+  </EntityType>
+  <EntityType Name="tbl_FuarResimler">
+    <Key>
+      <PropertyRef Name="fResimId" />
+    </Key>
+    <Property Name="fResimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fuarId" Type="Int32" Nullable="false" />
+    <Property Name="resimUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_Fuar" Relationship="Self.FK_tbl_FuarResimler_tbl_Fuar" FromRole="tbl_FuarResimler" ToRole="tbl_Fuar" />
+  </EntityType>
+  <EntityType Name="tbl_FuarZiyaretciProfil">
+    <Key>
+      <PropertyRef Name="fZiyaretciId" />
+    </Key>
+    <Property Name="fZiyaretciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fuarId" Type="Int32" Nullable="false" />
+    <Property Name="zProfilId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Fuar" Relationship="Self.FK_tbl_FuarZiyaretciProfil_tbl_Fuar" FromRole="tbl_FuarZiyaretciProfil" ToRole="tbl_Fuar" />
+    <NavigationProperty Name="tbl_ZiyaretciProfil" Relationship="Self.FK_tbl_FuarZiyaretciProfil_tbl_ZiyaretciProfil" FromRole="tbl_FuarZiyaretciProfil" ToRole="tbl_ZiyaretciProfil" />
+  </EntityType>
+  <EntityType Name="tbl_KatilimciFaaliyetAlani">
+    <Key>
+      <PropertyRef Name="kFaaliyetAlaniId" />
+    </Key>
+    <Property Name="kFaaliyetAlaniId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kId" Type="Int32" Nullable="false" />
+    <Property Name="faaliyetAlaniId" Type="Int32" />
+    <Property Name="diger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_FaatliyetAlani" Relationship="Self.FK_tbl_KatilimciFaaliyetAlani_tbl_FaatliyetAlani" FromRole="tbl_KatilimciFaaliyetAlani" ToRole="tbl_FaatliyetAlani" />
+    <NavigationProperty Name="tbl_KatilimciFirma" Relationship="Self.FK_tbl_KatilimciFaaliyetAlani_tbl_KatilimciFirma" FromRole="tbl_KatilimciFaaliyetAlani" ToRole="tbl_KatilimciFirma" />
+  </EntityType>
+  <EntityType Name="tbl_KatilimciFaaliyetTuru">
+    <Key>
+      <PropertyRef Name="kFaaliyetTuruId" />
+    </Key>
+    <Property Name="kFaaliyetTuruId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kId" Type="Int32" Nullable="false" />
+    <Property Name="faaliyetTuruId" Type="Int32" />
+    <Property Name="diger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_FaaliyetTuru" Relationship="Self.FK_tbl_KatilimciFaaliyetTuru_tbl_FaaliyetTuru" FromRole="tbl_KatilimciFaaliyetTuru" ToRole="tbl_FaaliyetTuru" />
+    <NavigationProperty Name="tbl_KatilimciFirma" Relationship="Self.FK_tbl_KatilimciFaaliyetTuru_tbl_KatilimciFirma" FromRole="tbl_KatilimciFaaliyetTuru" ToRole="tbl_KatilimciFirma" />
+  </EntityType>
+  <EntityType Name="tbl_KatilimciFirma">
+    <Key>
+      <PropertyRef Name="kId" />
+    </Key>
+    <Property Name="kId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kFirmaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kWebSiteUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kResimUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SehirId" Type="Int32" Nullable="false" />
+    <Property Name="ilceId" Type="Int32" Nullable="false" />
+    <Property Name="SemtMahId" Type="Int32" Nullable="false" />
+    <Property Name="kCalisanSayisi" Type="Int32" Nullable="false" />
+    <Property Name="kOnay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ilceler" Relationship="Self.FK_tbl_KatilimciFirma_Ilceler" FromRole="tbl_KatilimciFirma" ToRole="Ilceler" />
+    <NavigationProperty Name="Sehirler" Relationship="Self.FK_tbl_KatilimciFirma_Sehirler" FromRole="tbl_KatilimciFirma" ToRole="Sehirler" />
+    <NavigationProperty Name="SemtMah" Relationship="Self.FK_tbl_KatilimciFirma_SemtMah" FromRole="tbl_KatilimciFirma" ToRole="SemtMah" />
+    <NavigationProperty Name="tbl_KatilimciFaaliyetAlani" Relationship="Self.FK_tbl_KatilimciFaaliyetAlani_tbl_KatilimciFirma" FromRole="tbl_KatilimciFirma" ToRole="tbl_KatilimciFaaliyetAlani" />
+    <NavigationProperty Name="tbl_KatilimciFaaliyetTuru" Relationship="Self.FK_tbl_KatilimciFaaliyetTuru_tbl_KatilimciFirma" FromRole="tbl_KatilimciFirma" ToRole="tbl_KatilimciFaaliyetTuru" />
+    <NavigationProperty Name="tbl_KatilimciFirmaCalisanlar" Relationship="Self.FK_tbl_KatilimciFirmaCalisanlar_tbl_KatilimciFirma" FromRole="tbl_KatilimciFirma" ToRole="tbl_KatilimciFirmaCalisanlar" />
+    <NavigationProperty Name="tbl_KatilimciKatildigiFuarlar" Relationship="Self.FK_tbl_KatilimciKatildigiFuarlar_tbl_KatilimciFirma" FromRole="tbl_KatilimciFirma" ToRole="tbl_KatilimciKatildigiFuarlar" />
+    <NavigationProperty Name="tbl_KatilimciKatilimAmac" Relationship="Self.FK_tbl_KatilimciKatilimAmac_tbl_KatilimciFirma" FromRole="tbl_KatilimciFirma" ToRole="tbl_KatilimciKatilimAmac" />
+  </EntityType>
+  <EntityType Name="tbl_KatilimciFirmaCalisanlar">
+    <Key>
+      <PropertyRef Name="kCalisanId" />
+    </Key>
+    <Property Name="kCalisanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kId" Type="Int32" Nullable="false" />
+    <Property Name="kisiId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_KatilimciFirma" Relationship="Self.FK_tbl_KatilimciFirmaCalisanlar_tbl_KatilimciFirma" FromRole="tbl_KatilimciFirmaCalisanlar" ToRole="tbl_KatilimciFirma" />
+    <NavigationProperty Name="tbl_Kisiler" Relationship="Self.FK_tbl_KatilimciFirmaCalisanlar_tbl_Kisiler" FromRole="tbl_KatilimciFirmaCalisanlar" ToRole="tbl_Kisiler" />
+  </EntityType>
+  <EntityType Name="tbl_KatilimciKatildigiFuarlar">
+    <Key>
+      <PropertyRef Name="kKatildigiFuarId" />
+    </Key>
+    <Property Name="kKatildigiFuarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kId" Type="Int32" Nullable="false" />
+    <Property Name="fuarId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Fuar" Relationship="Self.FK_tbl_KatilimciKatildigiFuarlar_tbl_Fuar" FromRole="tbl_KatilimciKatildigiFuarlar" ToRole="tbl_Fuar" />
+    <NavigationProperty Name="tbl_KatilimciFirma" Relationship="Self.FK_tbl_KatilimciKatildigiFuarlar_tbl_KatilimciFirma" FromRole="tbl_KatilimciKatildigiFuarlar" ToRole="tbl_KatilimciFirma" />
+  </EntityType>
+  <EntityType Name="tbl_KatilimciKatilimAmac">
+    <Key>
+      <PropertyRef Name="kKatilimAmacId" />
+    </Key>
+    <Property Name="kKatilimAmacId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kId" Type="Int32" Nullable="false" />
+    <Property Name="amacId" Type="Int32" />
+    <Property Name="diger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Amac" Relationship="Self.FK_tbl_KatilimciKatilimAmac_tbl_Amac" FromRole="tbl_KatilimciKatilimAmac" ToRole="tbl_Amac" />
+    <NavigationProperty Name="tbl_KatilimciFirma" Relationship="Self.FK_tbl_KatilimciKatilimAmac_tbl_KatilimciFirma" FromRole="tbl_KatilimciKatilimAmac" ToRole="tbl_KatilimciFirma" />
+  </EntityType>
+  <EntityType Name="tbl_KatilimciProfil">
+    <Key>
+      <PropertyRef Name="kProfilId" />
+    </Key>
+    <Property Name="kProfilId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kProfilAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_FuarKatilimciProfil" Relationship="Self.FK_tbl_FuarKatilimciProfil_tbl_KatilimciProfil" FromRole="tbl_KatilimciProfil" ToRole="tbl_FuarKatilimciProfil" />
+  </EntityType>
+  <EntityType Name="tbl_Kisiler">
+    <Key>
+      <PropertyRef Name="kisiId" />
+    </Key>
+    <Property Name="kisiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kisiIsim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kisiSoyisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kisiTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kisiTcNo" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SehirId" Type="Int32" Nullable="false" />
+    <Property Name="ilceId" Type="Int32" Nullable="false" />
+    <Property Name="SemtMahId" Type="Int32" Nullable="false" />
+    <Property Name="kisiMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kisiResimUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="departmanId" Type="Int32" />
+    <Property Name="pozisyonId" Type="Int32" />
+    <Property Name="kullaniciId" Type="Int32" Nullable="false" />
+    <Property Name="kullaniciTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ilceler" Relationship="Self.FK_tbl_Kisiler_Ilceler" FromRole="tbl_Kisiler" ToRole="Ilceler" />
+    <NavigationProperty Name="Sehirler" Relationship="Self.FK_tbl_Kisiler_Sehirler" FromRole="tbl_Kisiler" ToRole="Sehirler" />
+    <NavigationProperty Name="SemtMah" Relationship="Self.FK_tbl_Kisiler_SemtMah" FromRole="tbl_Kisiler" ToRole="SemtMah" />
+    <NavigationProperty Name="tbl_BasinFirmaCalisanlar" Relationship="Self.FK_tbl_BasinFirmaCalisanlar_tbl_Kisiler" FromRole="tbl_Kisiler" ToRole="tbl_BasinFirmaCalisanlar" />
+    <NavigationProperty Name="tbl_Departman" Relationship="Self.FK_tbl_Kisiler_tbl_Departman" FromRole="tbl_Kisiler" ToRole="tbl_Departman" />
+    <NavigationProperty Name="tbl_KatilimciFirmaCalisanlar" Relationship="Self.FK_tbl_KatilimciFirmaCalisanlar_tbl_Kisiler" FromRole="tbl_Kisiler" ToRole="tbl_KatilimciFirmaCalisanlar" />
+    <NavigationProperty Name="tbl_Kullanici" Relationship="Self.FK_tbl_Kisiler_tbl_Kullanici" FromRole="tbl_Kisiler" ToRole="tbl_Kullanici" />
+    <NavigationProperty Name="tbl_Pozisyon" Relationship="Self.FK_tbl_Kisiler_tbl_Pozisyon" FromRole="tbl_Kisiler" ToRole="tbl_Pozisyon" />
+    <NavigationProperty Name="tbl_OrganizatorFirmaCalisanlar" Relationship="Self.FK_tbl_OrganizatorFirmaCalisanlar_tbl_Kisiler" FromRole="tbl_Kisiler" ToRole="tbl_OrganizatorFirmaCalisanlar" />
+    <NavigationProperty Name="tbl_ZiyaretciFirmaCalisanlar" Relationship="Self.FK_tbl_ZiyaretciFirmaCalisanlar_tbl_Kisiler" FromRole="tbl_Kisiler" ToRole="tbl_ZiyaretciFirmaCalisanlar" />
+  </EntityType>
+  <EntityType Name="tbl_Kullanici">
+    <Key>
+      <PropertyRef Name="kullaniciId" />
+    </Key>
+    <Property Name="kullaniciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kullaniciSifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_Kisiler" Relationship="Self.FK_tbl_Kisiler_tbl_Kullanici" FromRole="tbl_Kullanici" ToRole="tbl_Kisiler" />
+  </EntityType>
+  <EntityType Name="tbl_OrganizatorFaaliyetAlani">
+    <Key>
+      <PropertyRef Name="oFaaliyetAlaniId" />
+    </Key>
+    <Property Name="oFaaliyetAlaniId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="oId" Type="Int32" Nullable="false" />
+    <Property Name="faaliyetAlaniId" Type="Int32" />
+    <Property Name="diger" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tbl_FaatliyetAlani" Relationship="Self.FK_tbl_OrganizatorFaaliyetAlani_tbl_FaatliyetAlani" FromRole="tbl_OrganizatorFaaliyetAlani" ToRole="tbl_FaatliyetAlani" />
+    <NavigationProperty Name="tbl_OrganizatorFirma" Relationship="Self.FK_tbl_OrganizatorFaaliyetAlani_tbl_OrganizatorFirma" FromRole="tbl_OrganizatorFaaliyetAlani" ToRole="tbl_OrganizatorFirma" />
+  </EntityType>
+  <EntityType Name="tbl_OrganizatorFaaliyetTuru">
+    <Key>
+      <PropertyRef Name="oFaaliyetTuruId" />
+    </Key>
+    <Property Name="oFaaliyetTuruId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="oId" Type="Int32" Nullable="false" />
+    <Property Name="faaliyetTuruId" Type="Int32" />
+    <Property Name="diger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_FaaliyetTuru" Relationship="Self.FK_tbl_OrganizatorFaaliyetTuru_tbl_FaaliyetTuru" FromRole="tbl_OrganizatorFaaliyetTuru" ToRole="tbl_FaaliyetTuru" />
+    <NavigationProperty Name="tbl_OrganizatorFirma" Relationship="Self.FK_tbl_OrganizatorFaaliyetTuru_tbl_OrganizatorFirma" FromRole="tbl_OrganizatorFaaliyetTuru" ToRole="tbl_OrganizatorFirma" />
+  </EntityType>
+  <EntityType Name="tbl_OrganizatorFirma">
+    <Key>
+      <PropertyRef Name="oId" />
+    </Key>
+    <Property Name="oId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="oFirmaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="oWebSite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="oTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="oFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="oMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="oResimUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SehirId" Type="Int32" Nullable="false" />
+    <Property Name="ilceId" Type="Int32" Nullable="false" />
+    <Property Name="SemtMahId" Type="Int32" Nullable="false" />
+    <Property Name="oCalisanSayisi" Type="Int32" Nullable="false" />
+    <Property Name="oOnay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ilceler" Relationship="Self.FK_tbl_OrganizatorFirma_Ilceler" FromRole="tbl_OrganizatorFirma" ToRole="Ilceler" />
+    <NavigationProperty Name="Sehirler" Relationship="Self.FK_tbl_OrganizatorFirma_Sehirler" FromRole="tbl_OrganizatorFirma" ToRole="Sehirler" />
+    <NavigationProperty Name="SemtMah" Relationship="Self.FK_tbl_OrganizatorFirma_SemtMah" FromRole="tbl_OrganizatorFirma" ToRole="SemtMah" />
+    <NavigationProperty Name="tbl_OrganizatorFaaliyetAlani" Relationship="Self.FK_tbl_OrganizatorFaaliyetAlani_tbl_OrganizatorFirma" FromRole="tbl_OrganizatorFirma" ToRole="tbl_OrganizatorFaaliyetAlani" />
+    <NavigationProperty Name="tbl_OrganizatorFaaliyetTuru" Relationship="Self.FK_tbl_OrganizatorFaaliyetTuru_tbl_OrganizatorFirma" FromRole="tbl_OrganizatorFirma" ToRole="tbl_OrganizatorFaaliyetTuru" />
+    <NavigationProperty Name="tbl_OrganizatorFirmaCalisanlar" Relationship="Self.FK_tbl_OrganizatorFirmaCalisanlar_tbl_OrganizatorFirma" FromRole="tbl_OrganizatorFirma" ToRole="tbl_OrganizatorFirmaCalisanlar" />
+    <NavigationProperty Name="tbl_OrganizatorKatildigiFuarlar" Relationship="Self.FK_tbl_OrganizatorKatildigiFuarlar_tbl_OrganizatorFirma" FromRole="tbl_OrganizatorFirma" ToRole="tbl_OrganizatorKatildigiFuarlar" />
+  </EntityType>
+  <EntityType Name="tbl_OrganizatorFirmaCalisanlar">
+    <Key>
+      <PropertyRef Name="oCalisanlarId" />
+    </Key>
+    <Property Name="oCalisanlarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="oId" Type="Int32" Nullable="false" />
+    <Property Name="kisiId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Kisiler" Relationship="Self.FK_tbl_OrganizatorFirmaCalisanlar_tbl_Kisiler" FromRole="tbl_OrganizatorFirmaCalisanlar" ToRole="tbl_Kisiler" />
+    <NavigationProperty Name="tbl_OrganizatorFirma" Relationship="Self.FK_tbl_OrganizatorFirmaCalisanlar_tbl_OrganizatorFirma" FromRole="tbl_OrganizatorFirmaCalisanlar" ToRole="tbl_OrganizatorFirma" />
+  </EntityType>
+  <EntityType Name="tbl_OrganizatorKatildigiFuarlar">
+    <Key>
+      <PropertyRef Name="oKatildigiFuarlarId" />
+    </Key>
+    <Property Name="oKatildigiFuarlarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="oId" Type="Int32" Nullable="false" />
+    <Property Name="fuarId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Fuar" Relationship="Self.FK_tbl_OrganizatorKatildigiFuarlar_tbl_Fuar" FromRole="tbl_OrganizatorKatildigiFuarlar" ToRole="tbl_Fuar" />
+    <NavigationProperty Name="tbl_OrganizatorFirma" Relationship="Self.FK_tbl_OrganizatorKatildigiFuarlar_tbl_OrganizatorFirma" FromRole="tbl_OrganizatorKatildigiFuarlar" ToRole="tbl_OrganizatorFirma" />
+  </EntityType>
+  <EntityType Name="tbl_Pozisyon">
+    <Key>
+      <PropertyRef Name="pozisyonId" />
+    </Key>
+    <Property Name="pozisyonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pozisyonAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_Kisiler" Relationship="Self.FK_tbl_Kisiler_tbl_Pozisyon" FromRole="tbl_Pozisyon" ToRole="tbl_Kisiler" />
+  </EntityType>
+  <EntityType Name="tbl_UrunGruplari">
+    <Key>
+      <PropertyRef Name="urunId" />
+    </Key>
+    <Property Name="urunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urunGrupAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_ZiyaretciIlgilendigiUrun" Relationship="Self.FK_tbl_ZiyaretciIlgilendigiUrun_tbl_UrunGruplari" FromRole="tbl_UrunGruplari" ToRole="tbl_ZiyaretciIlgilendigiUrun" />
+  </EntityType>
+  <EntityType Name="tbl_ZiyaretciFaaliyetAlani">
+    <Key>
+      <PropertyRef Name="zFaaliyetAlaniId" />
+    </Key>
+    <Property Name="zFaaliyetAlaniId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="zId" Type="Int32" Nullable="false" />
+    <Property Name="faaliyetAlaniId" Type="Int32" />
+    <Property Name="diger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_FaaliyetTuru" Relationship="Self.FK_tbl_ZiyaretciFaaliyetAlani_tbl_FaaliyetTuru" FromRole="tbl_ZiyaretciFaaliyetAlani" ToRole="tbl_FaaliyetTuru" />
+    <NavigationProperty Name="tbl_ZiyaretciFirma" Relationship="Self.FK_tbl_ZiyaretciFaaliyetAlani_tbl_ZiyaretciFirma" FromRole="tbl_ZiyaretciFaaliyetAlani" ToRole="tbl_ZiyaretciFirma" />
+  </EntityType>
+  <EntityType Name="tbl_ZiyaretciFaaliyetTuru">
+    <Key>
+      <PropertyRef Name="zFaaliyetTuruId" />
+    </Key>
+    <Property Name="zFaaliyetTuruId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="zId" Type="Int32" Nullable="false" />
+    <Property Name="faaliyetTuruId" Type="Int32" />
+    <Property Name="diger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_FaatliyetAlani" Relationship="Self.FK_tbl_ZiyaretciFaaliyetTuru_tbl_FaatliyetAlani" FromRole="tbl_ZiyaretciFaaliyetTuru" ToRole="tbl_FaatliyetAlani" />
+    <NavigationProperty Name="tbl_ZiyaretciFirma" Relationship="Self.FK_tbl_ZiyaretciFaaliyetTuru_tbl_ZiyaretciFirma" FromRole="tbl_ZiyaretciFaaliyetTuru" ToRole="tbl_ZiyaretciFirma" />
+  </EntityType>
+  <EntityType Name="tbl_ZiyaretciFirma">
+    <Key>
+      <PropertyRef Name="zId" />
+    </Key>
+    <Property Name="zId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="zFirmaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="zWebSiteUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="zTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="zFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="zMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="zResimUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SehirId" Type="Int32" Nullable="false" />
+    <Property Name="ilceId" Type="Int32" Nullable="false" />
+    <Property Name="SemtMahId" Type="Int32" Nullable="false" />
+    <Property Name="zCalisanSayisi" Type="Int32" Nullable="false" />
+    <Property Name="zOnay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ilceler" Relationship="Self.FK_tbl_ZiyaretciFirma_Ilceler" FromRole="tbl_ZiyaretciFirma" ToRole="Ilceler" />
+    <NavigationProperty Name="Sehirler" Relationship="Self.FK_tbl_ZiyaretciFirma_Sehirler" FromRole="tbl_ZiyaretciFirma" ToRole="Sehirler" />
+    <NavigationProperty Name="SemtMah" Relationship="Self.FK_tbl_ZiyaretciFirma_SemtMah" FromRole="tbl_ZiyaretciFirma" ToRole="SemtMah" />
+    <NavigationProperty Name="tbl_ZiyaretciFaaliyetAlani" Relationship="Self.FK_tbl_ZiyaretciFaaliyetAlani_tbl_ZiyaretciFirma" FromRole="tbl_ZiyaretciFirma" ToRole="tbl_ZiyaretciFaaliyetAlani" />
+    <NavigationProperty Name="tbl_ZiyaretciFaaliyetTuru" Relationship="Self.FK_tbl_ZiyaretciFaaliyetTuru_tbl_ZiyaretciFirma" FromRole="tbl_ZiyaretciFirma" ToRole="tbl_ZiyaretciFaaliyetTuru" />
+    <NavigationProperty Name="tbl_ZiyaretciFirmaCalisanlar" Relationship="Self.FK_tbl_ZiyaretciFirmaCalisanlar_tbl_ZiyaretciFirma" FromRole="tbl_ZiyaretciFirma" ToRole="tbl_ZiyaretciFirmaCalisanlar" />
+    <NavigationProperty Name="tbl_ZiyaretciIlgilendigiUrun" Relationship="Self.FK_tbl_ZiyaretciIlgilendigiUrun_tbl_ZiyaretciFirma" FromRole="tbl_ZiyaretciFirma" ToRole="tbl_ZiyaretciIlgilendigiUrun" />
+    <NavigationProperty Name="tbl_ZiyaretciKatildigiFuarlar" Relationship="Self.FK_tbl_ZiyaretciKatildigiFuarlar_tbl_ZiyaretciFirma" FromRole="tbl_ZiyaretciFirma" ToRole="tbl_ZiyaretciKatildigiFuarlar" />
+    <NavigationProperty Name="tbl_ZiyaretciKatilimAmaci" Relationship="Self.FK_tbl_ZiyaretciKatilimAmaci_tbl_ZiyaretciFirma" FromRole="tbl_ZiyaretciFirma" ToRole="tbl_ZiyaretciKatilimAmaci" />
+  </EntityType>
+  <EntityType Name="tbl_ZiyaretciFirmaCalisanlar">
+    <Key>
+      <PropertyRef Name="zCalisanlarId" />
+    </Key>
+    <Property Name="zCalisanlarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="zId" Type="Int32" Nullable="false" />
+    <Property Name="kisiId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Kisiler" Relationship="Self.FK_tbl_ZiyaretciFirmaCalisanlar_tbl_Kisiler" FromRole="tbl_ZiyaretciFirmaCalisanlar" ToRole="tbl_Kisiler" />
+    <NavigationProperty Name="tbl_ZiyaretciFirma" Relationship="Self.FK_tbl_ZiyaretciFirmaCalisanlar_tbl_ZiyaretciFirma" FromRole="tbl_ZiyaretciFirmaCalisanlar" ToRole="tbl_ZiyaretciFirma" />
+  </EntityType>
+  <EntityType Name="tbl_ZiyaretciIlgilendigiUrun">
+    <Key>
+      <PropertyRef Name="zIlgilendigiUrunId" />
+    </Key>
+    <Property Name="zIlgilendigiUrunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="zId" Type="Int32" Nullable="false" />
+    <Property Name="urunId" Type="Int32" />
+    <Property Name="diger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_UrunGruplari" Relationship="Self.FK_tbl_ZiyaretciIlgilendigiUrun_tbl_UrunGruplari" FromRole="tbl_ZiyaretciIlgilendigiUrun" ToRole="tbl_UrunGruplari" />
+    <NavigationProperty Name="tbl_ZiyaretciFirma" Relationship="Self.FK_tbl_ZiyaretciIlgilendigiUrun_tbl_ZiyaretciFirma" FromRole="tbl_ZiyaretciIlgilendigiUrun" ToRole="tbl_ZiyaretciFirma" />
+  </EntityType>
+  <EntityType Name="tbl_ZiyaretciKatildigiFuarlar">
+    <Key>
+      <PropertyRef Name="zKatildigiFuarlarId" />
+    </Key>
+    <Property Name="zKatildigiFuarlarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="zId" Type="Int32" Nullable="false" />
+    <Property Name="fuarId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Fuar" Relationship="Self.FK_tbl_ZiyaretciKatildigiFuarlar_tbl_Fuar" FromRole="tbl_ZiyaretciKatildigiFuarlar" ToRole="tbl_Fuar" />
+    <NavigationProperty Name="tbl_ZiyaretciFirma" Relationship="Self.FK_tbl_ZiyaretciKatildigiFuarlar_tbl_ZiyaretciFirma" FromRole="tbl_ZiyaretciKatildigiFuarlar" ToRole="tbl_ZiyaretciFirma" />
+  </EntityType>
+  <EntityType Name="tbl_ZiyaretciKatilimAmaci">
+    <Key>
+      <PropertyRef Name="zKatilimAmacId" />
+    </Key>
+    <Property Name="zKatilimAmacId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="zId" Type="Int32" Nullable="false" />
+    <Property Name="amacId" Type="Int32" />
+    <Property Name="diger" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tbl_Amac" Relationship="Self.FK_tbl_ZiyaretciKatilimAmaci_tbl_Amac" FromRole="tbl_ZiyaretciKatilimAmaci" ToRole="tbl_Amac" />
+    <NavigationProperty Name="tbl_ZiyaretciFirma" Relationship="Self.FK_tbl_ZiyaretciKatilimAmaci_tbl_ZiyaretciFirma" FromRole="tbl_ZiyaretciKatilimAmaci" ToRole="tbl_ZiyaretciFirma" />
+  </EntityType>
+  <EntityType Name="tbl_ZiyaretciProfil">
+    <Key>
+      <PropertyRef Name="zProfilId" />
+    </Key>
+    <Property Name="zProfilId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="zProfilAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_FuarZiyaretciProfil" Relationship="Self.FK_tbl_FuarZiyaretciProfil_tbl_ZiyaretciProfil" FromRole="tbl_ZiyaretciProfil" ToRole="tbl_FuarZiyaretciProfil" />
+  </EntityType>
+  <Association Name="FK_Ilceler_Sehirler">
+    <End Role="Sehirler" Type="Self.Sehirler" Multiplicity="1" />
+    <End Role="Ilceler" Type="Self.Ilceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sehirler">
+        <PropertyRef Name="SehirId" />
+      </Principal>
+      <Dependent Role="Ilceler">
+        <PropertyRef Name="SehirId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SemtMah_Ilceler">
+    <End Role="Ilceler" Type="Self.Ilceler" Multiplicity="1" />
+    <End Role="SemtMah" Type="Self.SemtMah" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ilceler">
+        <PropertyRef Name="ilceId" />
+      </Principal>
+      <Dependent Role="SemtMah">
+        <PropertyRef Name="ilceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BasinFirma_Ilceler">
+    <End Role="Ilceler" Type="Self.Ilceler" Multiplicity="1" />
+    <End Role="tbl_BasinFirma" Type="Self.tbl_BasinFirma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ilceler">
+        <PropertyRef Name="ilceId" />
+      </Principal>
+      <Dependent Role="tbl_BasinFirma">
+        <PropertyRef Name="ilceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Fuar_Ilceler">
+    <End Role="Ilceler" Type="Self.Ilceler" Multiplicity="1" />
+    <End Role="tbl_Fuar" Type="Self.tbl_Fuar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ilceler">
+        <PropertyRef Name="ilceId" />
+      </Principal>
+      <Dependent Role="tbl_Fuar">
+        <PropertyRef Name="ilceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_KatilimciFirma_Ilceler">
+    <End Role="Ilceler" Type="Self.Ilceler" Multiplicity="1" />
+    <End Role="tbl_KatilimciFirma" Type="Self.tbl_KatilimciFirma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ilceler">
+        <PropertyRef Name="ilceId" />
+      </Principal>
+      <Dependent Role="tbl_KatilimciFirma">
+        <PropertyRef Name="ilceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Kisiler_Ilceler">
+    <End Role="Ilceler" Type="Self.Ilceler" Multiplicity="1" />
+    <End Role="tbl_Kisiler" Type="Self.tbl_Kisiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ilceler">
+        <PropertyRef Name="ilceId" />
+      </Principal>
+      <Dependent Role="tbl_Kisiler">
+        <PropertyRef Name="ilceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrganizatorFirma_Ilceler">
+    <End Role="Ilceler" Type="Self.Ilceler" Multiplicity="1" />
+    <End Role="tbl_OrganizatorFirma" Type="Self.tbl_OrganizatorFirma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ilceler">
+        <PropertyRef Name="ilceId" />
+      </Principal>
+      <Dependent Role="tbl_OrganizatorFirma">
+        <PropertyRef Name="ilceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciFirma_Ilceler">
+    <End Role="Ilceler" Type="Self.Ilceler" Multiplicity="1" />
+    <End Role="tbl_ZiyaretciFirma" Type="Self.tbl_ZiyaretciFirma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ilceler">
+        <PropertyRef Name="ilceId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciFirma">
+        <PropertyRef Name="ilceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BasinFirma_Sehirler">
+    <End Role="Sehirler" Type="Self.Sehirler" Multiplicity="1" />
+    <End Role="tbl_BasinFirma" Type="Self.tbl_BasinFirma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sehirler">
+        <PropertyRef Name="SehirId" />
+      </Principal>
+      <Dependent Role="tbl_BasinFirma">
+        <PropertyRef Name="SehirId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Fuar_Sehirler">
+    <End Role="Sehirler" Type="Self.Sehirler" Multiplicity="1" />
+    <End Role="tbl_Fuar" Type="Self.tbl_Fuar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sehirler">
+        <PropertyRef Name="SehirId" />
+      </Principal>
+      <Dependent Role="tbl_Fuar">
+        <PropertyRef Name="SehirId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_KatilimciFirma_Sehirler">
+    <End Role="Sehirler" Type="Self.Sehirler" Multiplicity="1" />
+    <End Role="tbl_KatilimciFirma" Type="Self.tbl_KatilimciFirma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sehirler">
+        <PropertyRef Name="SehirId" />
+      </Principal>
+      <Dependent Role="tbl_KatilimciFirma">
+        <PropertyRef Name="SehirId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Kisiler_Sehirler">
+    <End Role="Sehirler" Type="Self.Sehirler" Multiplicity="1" />
+    <End Role="tbl_Kisiler" Type="Self.tbl_Kisiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sehirler">
+        <PropertyRef Name="SehirId" />
+      </Principal>
+      <Dependent Role="tbl_Kisiler">
+        <PropertyRef Name="SehirId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrganizatorFirma_Sehirler">
+    <End Role="Sehirler" Type="Self.Sehirler" Multiplicity="1" />
+    <End Role="tbl_OrganizatorFirma" Type="Self.tbl_OrganizatorFirma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sehirler">
+        <PropertyRef Name="SehirId" />
+      </Principal>
+      <Dependent Role="tbl_OrganizatorFirma">
+        <PropertyRef Name="SehirId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciFirma_Sehirler">
+    <End Role="Sehirler" Type="Self.Sehirler" Multiplicity="1" />
+    <End Role="tbl_ZiyaretciFirma" Type="Self.tbl_ZiyaretciFirma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sehirler">
+        <PropertyRef Name="SehirId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciFirma">
+        <PropertyRef Name="SehirId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BasinFirma_SemtMah">
+    <End Role="SemtMah" Type="Self.SemtMah" Multiplicity="1" />
+    <End Role="tbl_BasinFirma" Type="Self.tbl_BasinFirma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SemtMah">
+        <PropertyRef Name="SemtMahId" />
+      </Principal>
+      <Dependent Role="tbl_BasinFirma">
+        <PropertyRef Name="SemtMahId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Fuar_SemtMah">
+    <End Role="SemtMah" Type="Self.SemtMah" Multiplicity="1" />
+    <End Role="tbl_Fuar" Type="Self.tbl_Fuar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SemtMah">
+        <PropertyRef Name="SemtMahId" />
+      </Principal>
+      <Dependent Role="tbl_Fuar">
+        <PropertyRef Name="SemtMahId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_KatilimciFirma_SemtMah">
+    <End Role="SemtMah" Type="Self.SemtMah" Multiplicity="1" />
+    <End Role="tbl_KatilimciFirma" Type="Self.tbl_KatilimciFirma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SemtMah">
+        <PropertyRef Name="SemtMahId" />
+      </Principal>
+      <Dependent Role="tbl_KatilimciFirma">
+        <PropertyRef Name="SemtMahId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Kisiler_SemtMah">
+    <End Role="SemtMah" Type="Self.SemtMah" Multiplicity="1" />
+    <End Role="tbl_Kisiler" Type="Self.tbl_Kisiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SemtMah">
+        <PropertyRef Name="SemtMahId" />
+      </Principal>
+      <Dependent Role="tbl_Kisiler">
+        <PropertyRef Name="SemtMahId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrganizatorFirma_SemtMah">
+    <End Role="SemtMah" Type="Self.SemtMah" Multiplicity="1" />
+    <End Role="tbl_OrganizatorFirma" Type="Self.tbl_OrganizatorFirma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SemtMah">
+        <PropertyRef Name="SemtMahId" />
+      </Principal>
+      <Dependent Role="tbl_OrganizatorFirma">
+        <PropertyRef Name="SemtMahId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciFirma_SemtMah">
+    <End Role="SemtMah" Type="Self.SemtMah" Multiplicity="1" />
+    <End Role="tbl_ZiyaretciFirma" Type="Self.tbl_ZiyaretciFirma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SemtMah">
+        <PropertyRef Name="SemtMahId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciFirma">
+        <PropertyRef Name="SemtMahId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_KatilimciKatilimAmac_tbl_Amac">
+    <End Role="tbl_Amac" Type="Self.tbl_Amac" Multiplicity="0..1" />
+    <End Role="tbl_KatilimciKatilimAmac" Type="Self.tbl_KatilimciKatilimAmac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Amac">
+        <PropertyRef Name="amacId" />
+      </Principal>
+      <Dependent Role="tbl_KatilimciKatilimAmac">
+        <PropertyRef Name="amacId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciKatilimAmaci_tbl_Amac">
+    <End Role="tbl_Amac" Type="Self.tbl_Amac" Multiplicity="0..1" />
+    <End Role="tbl_ZiyaretciKatilimAmaci" Type="Self.tbl_ZiyaretciKatilimAmaci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Amac">
+        <PropertyRef Name="amacId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciKatilimAmaci">
+        <PropertyRef Name="amacId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BasinFirmaCalisanlar_tbl_BasinFirma">
+    <End Role="tbl_BasinFirma" Type="Self.tbl_BasinFirma" Multiplicity="1" />
+    <End Role="tbl_BasinFirmaCalisanlar" Type="Self.tbl_BasinFirmaCalisanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_BasinFirma">
+        <PropertyRef Name="bId" />
+      </Principal>
+      <Dependent Role="tbl_BasinFirmaCalisanlar">
+        <PropertyRef Name="bId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BasinKatildigiFuarlar_tbl_BasinFirma">
+    <End Role="tbl_BasinFirma" Type="Self.tbl_BasinFirma" Multiplicity="1" />
+    <End Role="tbl_BasinKatildigiFuarlar" Type="Self.tbl_BasinKatildigiFuarlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_BasinFirma">
+        <PropertyRef Name="bId" />
+      </Principal>
+      <Dependent Role="tbl_BasinKatildigiFuarlar">
+        <PropertyRef Name="bId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BasinFirmaCalisanlar_tbl_Kisiler">
+    <End Role="tbl_Kisiler" Type="Self.tbl_Kisiler" Multiplicity="1" />
+    <End Role="tbl_BasinFirmaCalisanlar" Type="Self.tbl_BasinFirmaCalisanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Kisiler">
+        <PropertyRef Name="kisiId" />
+      </Principal>
+      <Dependent Role="tbl_BasinFirmaCalisanlar">
+        <PropertyRef Name="kisiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_BasinKatildigiFuarlar_tbl_Fuar">
+    <End Role="tbl_Fuar" Type="Self.tbl_Fuar" Multiplicity="1" />
+    <End Role="tbl_BasinKatildigiFuarlar" Type="Self.tbl_BasinKatildigiFuarlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Fuar">
+        <PropertyRef Name="fuarId" />
+      </Principal>
+      <Dependent Role="tbl_BasinKatildigiFuarlar">
+        <PropertyRef Name="fuarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Kisiler_tbl_Departman">
+    <End Role="tbl_Departman" Type="Self.tbl_Departman" Multiplicity="0..1" />
+    <End Role="tbl_Kisiler" Type="Self.tbl_Kisiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Departman">
+        <PropertyRef Name="departmanId" />
+      </Principal>
+      <Dependent Role="tbl_Kisiler">
+        <PropertyRef Name="departmanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_FaaliyetTuru_tbl_FaatliyetAlani">
+    <End Role="tbl_FaatliyetAlani" Type="Self.tbl_FaatliyetAlani" Multiplicity="1" />
+    <End Role="tbl_FaaliyetTuru" Type="Self.tbl_FaaliyetTuru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_FaatliyetAlani">
+        <PropertyRef Name="faaliyetAlaniId" />
+      </Principal>
+      <Dependent Role="tbl_FaaliyetTuru">
+        <PropertyRef Name="faaliyetAlaniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_FuarKapsamTuru_tbl_FaaliyetTuru">
+    <End Role="tbl_FaaliyetTuru" Type="Self.tbl_FaaliyetTuru" Multiplicity="0..1" />
+    <End Role="tbl_FuarKapsamTuru" Type="Self.tbl_FuarKapsamTuru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_FaaliyetTuru">
+        <PropertyRef Name="faaliyetTuruId" />
+      </Principal>
+      <Dependent Role="tbl_FuarKapsamTuru">
+        <PropertyRef Name="faaliyetTuruId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_KatilimciFaaliyetTuru_tbl_FaaliyetTuru">
+    <End Role="tbl_FaaliyetTuru" Type="Self.tbl_FaaliyetTuru" Multiplicity="0..1" />
+    <End Role="tbl_KatilimciFaaliyetTuru" Type="Self.tbl_KatilimciFaaliyetTuru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_FaaliyetTuru">
+        <PropertyRef Name="faaliyetTuruId" />
+      </Principal>
+      <Dependent Role="tbl_KatilimciFaaliyetTuru">
+        <PropertyRef Name="faaliyetTuruId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrganizatorFaaliyetTuru_tbl_FaaliyetTuru">
+    <End Role="tbl_FaaliyetTuru" Type="Self.tbl_FaaliyetTuru" Multiplicity="0..1" />
+    <End Role="tbl_OrganizatorFaaliyetTuru" Type="Self.tbl_OrganizatorFaaliyetTuru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_FaaliyetTuru">
+        <PropertyRef Name="faaliyetTuruId" />
+      </Principal>
+      <Dependent Role="tbl_OrganizatorFaaliyetTuru">
+        <PropertyRef Name="faaliyetTuruId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciFaaliyetAlani_tbl_FaaliyetTuru">
+    <End Role="tbl_FaaliyetTuru" Type="Self.tbl_FaaliyetTuru" Multiplicity="0..1" />
+    <End Role="tbl_ZiyaretciFaaliyetAlani" Type="Self.tbl_ZiyaretciFaaliyetAlani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_FaaliyetTuru">
+        <PropertyRef Name="faaliyetTuruId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciFaaliyetAlani">
+        <PropertyRef Name="faaliyetAlaniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_FuarKapsamAlani_tbl_FaatliyetAlani">
+    <End Role="tbl_FaatliyetAlani" Type="Self.tbl_FaatliyetAlani" Multiplicity="0..1" />
+    <End Role="tbl_FuarKapsamAlani" Type="Self.tbl_FuarKapsamAlani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_FaatliyetAlani">
+        <PropertyRef Name="faaliyetAlaniId" />
+      </Principal>
+      <Dependent Role="tbl_FuarKapsamAlani">
+        <PropertyRef Name="faaliyetAlaniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_KatilimciFaaliyetAlani_tbl_FaatliyetAlani">
+    <End Role="tbl_FaatliyetAlani" Type="Self.tbl_FaatliyetAlani" Multiplicity="0..1" />
+    <End Role="tbl_KatilimciFaaliyetAlani" Type="Self.tbl_KatilimciFaaliyetAlani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_FaatliyetAlani">
+        <PropertyRef Name="faaliyetAlaniId" />
+      </Principal>
+      <Dependent Role="tbl_KatilimciFaaliyetAlani">
+        <PropertyRef Name="faaliyetAlaniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrganizatorFaaliyetAlani_tbl_FaatliyetAlani">
+    <End Role="tbl_FaatliyetAlani" Type="Self.tbl_FaatliyetAlani" Multiplicity="0..1" />
+    <End Role="tbl_OrganizatorFaaliyetAlani" Type="Self.tbl_OrganizatorFaaliyetAlani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_FaatliyetAlani">
+        <PropertyRef Name="faaliyetAlaniId" />
+      </Principal>
+      <Dependent Role="tbl_OrganizatorFaaliyetAlani">
+        <PropertyRef Name="faaliyetAlaniId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciFaaliyetTuru_tbl_FaatliyetAlani">
+    <End Role="tbl_FaatliyetAlani" Type="Self.tbl_FaatliyetAlani" Multiplicity="0..1" />
+    <End Role="tbl_ZiyaretciFaaliyetTuru" Type="Self.tbl_ZiyaretciFaaliyetTuru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_FaatliyetAlani">
+        <PropertyRef Name="faaliyetAlaniId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciFaaliyetTuru">
+        <PropertyRef Name="faaliyetTuruId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_FuarBasinBulteni_tbl_Fuar">
+    <End Role="tbl_Fuar" Type="Self.tbl_Fuar" Multiplicity="1" />
+    <End Role="tbl_FuarBasinBulteni" Type="Self.tbl_FuarBasinBulteni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Fuar">
+        <PropertyRef Name="fuarId" />
+      </Principal>
+      <Dependent Role="tbl_FuarBasinBulteni">
+        <PropertyRef Name="fuarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_FuarKapsamAlani_tbl_Fuar">
+    <End Role="tbl_Fuar" Type="Self.tbl_Fuar" Multiplicity="1" />
+    <End Role="tbl_FuarKapsamAlani" Type="Self.tbl_FuarKapsamAlani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Fuar">
+        <PropertyRef Name="fuarId" />
+      </Principal>
+      <Dependent Role="tbl_FuarKapsamAlani">
+        <PropertyRef Name="fuarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_FuarKapsamTuru_tbl_Fuar">
+    <End Role="tbl_Fuar" Type="Self.tbl_Fuar" Multiplicity="1" />
+    <End Role="tbl_FuarKapsamTuru" Type="Self.tbl_FuarKapsamTuru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Fuar">
+        <PropertyRef Name="fuarId" />
+      </Principal>
+      <Dependent Role="tbl_FuarKapsamTuru">
+        <PropertyRef Name="fuarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_FuarKatilimciProfil_tbl_Fuar">
+    <End Role="tbl_Fuar" Type="Self.tbl_Fuar" Multiplicity="1" />
+    <End Role="tbl_FuarKatilimciProfil" Type="Self.tbl_FuarKatilimciProfil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Fuar">
+        <PropertyRef Name="fuarId" />
+      </Principal>
+      <Dependent Role="tbl_FuarKatilimciProfil">
+        <PropertyRef Name="fuarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_FuarResimler_tbl_Fuar">
+    <End Role="tbl_Fuar" Type="Self.tbl_Fuar" Multiplicity="1" />
+    <End Role="tbl_FuarResimler" Type="Self.tbl_FuarResimler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Fuar">
+        <PropertyRef Name="fuarId" />
+      </Principal>
+      <Dependent Role="tbl_FuarResimler">
+        <PropertyRef Name="fuarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_FuarZiyaretciProfil_tbl_Fuar">
+    <End Role="tbl_Fuar" Type="Self.tbl_Fuar" Multiplicity="1" />
+    <End Role="tbl_FuarZiyaretciProfil" Type="Self.tbl_FuarZiyaretciProfil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Fuar">
+        <PropertyRef Name="fuarId" />
+      </Principal>
+      <Dependent Role="tbl_FuarZiyaretciProfil">
+        <PropertyRef Name="fuarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_KatilimciKatildigiFuarlar_tbl_Fuar">
+    <End Role="tbl_Fuar" Type="Self.tbl_Fuar" Multiplicity="1" />
+    <End Role="tbl_KatilimciKatildigiFuarlar" Type="Self.tbl_KatilimciKatildigiFuarlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Fuar">
+        <PropertyRef Name="fuarId" />
+      </Principal>
+      <Dependent Role="tbl_KatilimciKatildigiFuarlar">
+        <PropertyRef Name="fuarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrganizatorKatildigiFuarlar_tbl_Fuar">
+    <End Role="tbl_Fuar" Type="Self.tbl_Fuar" Multiplicity="1" />
+    <End Role="tbl_OrganizatorKatildigiFuarlar" Type="Self.tbl_OrganizatorKatildigiFuarlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Fuar">
+        <PropertyRef Name="fuarId" />
+      </Principal>
+      <Dependent Role="tbl_OrganizatorKatildigiFuarlar">
+        <PropertyRef Name="fuarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciKatildigiFuarlar_tbl_Fuar">
+    <End Role="tbl_Fuar" Type="Self.tbl_Fuar" Multiplicity="1" />
+    <End Role="tbl_ZiyaretciKatildigiFuarlar" Type="Self.tbl_ZiyaretciKatildigiFuarlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Fuar">
+        <PropertyRef Name="fuarId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciKatildigiFuarlar">
+        <PropertyRef Name="fuarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_FuarKatilimciProfil_tbl_KatilimciProfil">
+    <End Role="tbl_KatilimciProfil" Type="Self.tbl_KatilimciProfil" Multiplicity="1" />
+    <End Role="tbl_FuarKatilimciProfil" Type="Self.tbl_FuarKatilimciProfil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_KatilimciProfil">
+        <PropertyRef Name="kProfilId" />
+      </Principal>
+      <Dependent Role="tbl_FuarKatilimciProfil">
+        <PropertyRef Name="kProfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_FuarZiyaretciProfil_tbl_ZiyaretciProfil">
+    <End Role="tbl_ZiyaretciProfil" Type="Self.tbl_ZiyaretciProfil" Multiplicity="1" />
+    <End Role="tbl_FuarZiyaretciProfil" Type="Self.tbl_FuarZiyaretciProfil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ZiyaretciProfil">
+        <PropertyRef Name="zProfilId" />
+      </Principal>
+      <Dependent Role="tbl_FuarZiyaretciProfil">
+        <PropertyRef Name="zProfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_KatilimciFaaliyetAlani_tbl_KatilimciFirma">
+    <End Role="tbl_KatilimciFirma" Type="Self.tbl_KatilimciFirma" Multiplicity="1" />
+    <End Role="tbl_KatilimciFaaliyetAlani" Type="Self.tbl_KatilimciFaaliyetAlani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_KatilimciFirma">
+        <PropertyRef Name="kId" />
+      </Principal>
+      <Dependent Role="tbl_KatilimciFaaliyetAlani">
+        <PropertyRef Name="kId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_KatilimciFaaliyetTuru_tbl_KatilimciFirma">
+    <End Role="tbl_KatilimciFirma" Type="Self.tbl_KatilimciFirma" Multiplicity="1" />
+    <End Role="tbl_KatilimciFaaliyetTuru" Type="Self.tbl_KatilimciFaaliyetTuru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_KatilimciFirma">
+        <PropertyRef Name="kId" />
+      </Principal>
+      <Dependent Role="tbl_KatilimciFaaliyetTuru">
+        <PropertyRef Name="kId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_KatilimciFirmaCalisanlar_tbl_KatilimciFirma">
+    <End Role="tbl_KatilimciFirma" Type="Self.tbl_KatilimciFirma" Multiplicity="1" />
+    <End Role="tbl_KatilimciFirmaCalisanlar" Type="Self.tbl_KatilimciFirmaCalisanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_KatilimciFirma">
+        <PropertyRef Name="kId" />
+      </Principal>
+      <Dependent Role="tbl_KatilimciFirmaCalisanlar">
+        <PropertyRef Name="kId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_KatilimciKatildigiFuarlar_tbl_KatilimciFirma">
+    <End Role="tbl_KatilimciFirma" Type="Self.tbl_KatilimciFirma" Multiplicity="1" />
+    <End Role="tbl_KatilimciKatildigiFuarlar" Type="Self.tbl_KatilimciKatildigiFuarlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_KatilimciFirma">
+        <PropertyRef Name="kId" />
+      </Principal>
+      <Dependent Role="tbl_KatilimciKatildigiFuarlar">
+        <PropertyRef Name="kId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_KatilimciKatilimAmac_tbl_KatilimciFirma">
+    <End Role="tbl_KatilimciFirma" Type="Self.tbl_KatilimciFirma" Multiplicity="1" />
+    <End Role="tbl_KatilimciKatilimAmac" Type="Self.tbl_KatilimciKatilimAmac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_KatilimciFirma">
+        <PropertyRef Name="kId" />
+      </Principal>
+      <Dependent Role="tbl_KatilimciKatilimAmac">
+        <PropertyRef Name="kId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_KatilimciFirmaCalisanlar_tbl_Kisiler">
+    <End Role="tbl_Kisiler" Type="Self.tbl_Kisiler" Multiplicity="1" />
+    <End Role="tbl_KatilimciFirmaCalisanlar" Type="Self.tbl_KatilimciFirmaCalisanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Kisiler">
+        <PropertyRef Name="kisiId" />
+      </Principal>
+      <Dependent Role="tbl_KatilimciFirmaCalisanlar">
+        <PropertyRef Name="kisiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Kisiler_tbl_Kullanici">
+    <End Role="tbl_Kullanici" Type="Self.tbl_Kullanici" Multiplicity="1" />
+    <End Role="tbl_Kisiler" Type="Self.tbl_Kisiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Kullanici">
+        <PropertyRef Name="kullaniciId" />
+      </Principal>
+      <Dependent Role="tbl_Kisiler">
+        <PropertyRef Name="kullaniciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Kisiler_tbl_Pozisyon">
+    <End Role="tbl_Pozisyon" Type="Self.tbl_Pozisyon" Multiplicity="0..1" />
+    <End Role="tbl_Kisiler" Type="Self.tbl_Kisiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Pozisyon">
+        <PropertyRef Name="pozisyonId" />
+      </Principal>
+      <Dependent Role="tbl_Kisiler">
+        <PropertyRef Name="pozisyonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrganizatorFirmaCalisanlar_tbl_Kisiler">
+    <End Role="tbl_Kisiler" Type="Self.tbl_Kisiler" Multiplicity="1" />
+    <End Role="tbl_OrganizatorFirmaCalisanlar" Type="Self.tbl_OrganizatorFirmaCalisanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Kisiler">
+        <PropertyRef Name="kisiId" />
+      </Principal>
+      <Dependent Role="tbl_OrganizatorFirmaCalisanlar">
+        <PropertyRef Name="kisiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciFirmaCalisanlar_tbl_Kisiler">
+    <End Role="tbl_Kisiler" Type="Self.tbl_Kisiler" Multiplicity="1" />
+    <End Role="tbl_ZiyaretciFirmaCalisanlar" Type="Self.tbl_ZiyaretciFirmaCalisanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Kisiler">
+        <PropertyRef Name="kisiId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciFirmaCalisanlar">
+        <PropertyRef Name="kisiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrganizatorFaaliyetAlani_tbl_OrganizatorFirma">
+    <End Role="tbl_OrganizatorFirma" Type="Self.tbl_OrganizatorFirma" Multiplicity="1" />
+    <End Role="tbl_OrganizatorFaaliyetAlani" Type="Self.tbl_OrganizatorFaaliyetAlani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_OrganizatorFirma">
+        <PropertyRef Name="oId" />
+      </Principal>
+      <Dependent Role="tbl_OrganizatorFaaliyetAlani">
+        <PropertyRef Name="oId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrganizatorFaaliyetTuru_tbl_OrganizatorFirma">
+    <End Role="tbl_OrganizatorFirma" Type="Self.tbl_OrganizatorFirma" Multiplicity="1" />
+    <End Role="tbl_OrganizatorFaaliyetTuru" Type="Self.tbl_OrganizatorFaaliyetTuru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_OrganizatorFirma">
+        <PropertyRef Name="oId" />
+      </Principal>
+      <Dependent Role="tbl_OrganizatorFaaliyetTuru">
+        <PropertyRef Name="oId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrganizatorFirmaCalisanlar_tbl_OrganizatorFirma">
+    <End Role="tbl_OrganizatorFirma" Type="Self.tbl_OrganizatorFirma" Multiplicity="1" />
+    <End Role="tbl_OrganizatorFirmaCalisanlar" Type="Self.tbl_OrganizatorFirmaCalisanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_OrganizatorFirma">
+        <PropertyRef Name="oId" />
+      </Principal>
+      <Dependent Role="tbl_OrganizatorFirmaCalisanlar">
+        <PropertyRef Name="oId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_OrganizatorKatildigiFuarlar_tbl_OrganizatorFirma">
+    <End Role="tbl_OrganizatorFirma" Type="Self.tbl_OrganizatorFirma" Multiplicity="1" />
+    <End Role="tbl_OrganizatorKatildigiFuarlar" Type="Self.tbl_OrganizatorKatildigiFuarlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_OrganizatorFirma">
+        <PropertyRef Name="oId" />
+      </Principal>
+      <Dependent Role="tbl_OrganizatorKatildigiFuarlar">
+        <PropertyRef Name="oId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciIlgilendigiUrun_tbl_UrunGruplari">
+    <End Role="tbl_UrunGruplari" Type="Self.tbl_UrunGruplari" Multiplicity="0..1" />
+    <End Role="tbl_ZiyaretciIlgilendigiUrun" Type="Self.tbl_ZiyaretciIlgilendigiUrun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_UrunGruplari">
+        <PropertyRef Name="urunId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciIlgilendigiUrun">
+        <PropertyRef Name="urunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciFaaliyetAlani_tbl_ZiyaretciFirma">
+    <End Role="tbl_ZiyaretciFirma" Type="Self.tbl_ZiyaretciFirma" Multiplicity="1" />
+    <End Role="tbl_ZiyaretciFaaliyetAlani" Type="Self.tbl_ZiyaretciFaaliyetAlani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ZiyaretciFirma">
+        <PropertyRef Name="zId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciFaaliyetAlani">
+        <PropertyRef Name="zId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciFaaliyetTuru_tbl_ZiyaretciFirma">
+    <End Role="tbl_ZiyaretciFirma" Type="Self.tbl_ZiyaretciFirma" Multiplicity="1" />
+    <End Role="tbl_ZiyaretciFaaliyetTuru" Type="Self.tbl_ZiyaretciFaaliyetTuru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ZiyaretciFirma">
+        <PropertyRef Name="zId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciFaaliyetTuru">
+        <PropertyRef Name="zId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciFirmaCalisanlar_tbl_ZiyaretciFirma">
+    <End Role="tbl_ZiyaretciFirma" Type="Self.tbl_ZiyaretciFirma" Multiplicity="1" />
+    <End Role="tbl_ZiyaretciFirmaCalisanlar" Type="Self.tbl_ZiyaretciFirmaCalisanlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ZiyaretciFirma">
+        <PropertyRef Name="zId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciFirmaCalisanlar">
+        <PropertyRef Name="zId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciIlgilendigiUrun_tbl_ZiyaretciFirma">
+    <End Role="tbl_ZiyaretciFirma" Type="Self.tbl_ZiyaretciFirma" Multiplicity="1" />
+    <End Role="tbl_ZiyaretciIlgilendigiUrun" Type="Self.tbl_ZiyaretciIlgilendigiUrun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ZiyaretciFirma">
+        <PropertyRef Name="zId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciIlgilendigiUrun">
+        <PropertyRef Name="zId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciKatildigiFuarlar_tbl_ZiyaretciFirma">
+    <End Role="tbl_ZiyaretciFirma" Type="Self.tbl_ZiyaretciFirma" Multiplicity="1" />
+    <End Role="tbl_ZiyaretciKatildigiFuarlar" Type="Self.tbl_ZiyaretciKatildigiFuarlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ZiyaretciFirma">
+        <PropertyRef Name="zId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciKatildigiFuarlar">
+        <PropertyRef Name="zId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZiyaretciKatilimAmaci_tbl_ZiyaretciFirma">
+    <End Role="tbl_ZiyaretciFirma" Type="Self.tbl_ZiyaretciFirma" Multiplicity="1" />
+    <End Role="tbl_ZiyaretciKatilimAmaci" Type="Self.tbl_ZiyaretciKatilimAmaci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ZiyaretciFirma">
+        <PropertyRef Name="zId" />
+      </Principal>
+      <Dependent Role="tbl_ZiyaretciKatilimAmaci">
+        <PropertyRef Name="zId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FuarDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ilceler" EntityType="Self.Ilceler" />
+    <EntitySet Name="Sehirler" EntityType="Self.Sehirler" />
+    <EntitySet Name="SemtMah" EntityType="Self.SemtMah" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="tbl_Amac" EntityType="Self.tbl_Amac" />
+    <EntitySet Name="tbl_BasinFirma" EntityType="Self.tbl_BasinFirma" />
+    <EntitySet Name="tbl_BasinFirmaCalisanlar" EntityType="Self.tbl_BasinFirmaCalisanlar" />
+    <EntitySet Name="tbl_BasinKatildigiFuarlar" EntityType="Self.tbl_BasinKatildigiFuarlar" />
+    <EntitySet Name="tbl_Departman" EntityType="Self.tbl_Departman" />
+    <EntitySet Name="tbl_FaaliyetTuru" EntityType="Self.tbl_FaaliyetTuru" />
+    <EntitySet Name="tbl_FaatliyetAlani" EntityType="Self.tbl_FaatliyetAlani" />
+    <EntitySet Name="tbl_Fuar" EntityType="Self.tbl_Fuar" />
+    <EntitySet Name="tbl_FuarBasinBulteni" EntityType="Self.tbl_FuarBasinBulteni" />
+    <EntitySet Name="tbl_FuarKapsamAlani" EntityType="Self.tbl_FuarKapsamAlani" />
+    <EntitySet Name="tbl_FuarKapsamTuru" EntityType="Self.tbl_FuarKapsamTuru" />
+    <EntitySet Name="tbl_FuarKatilimciProfil" EntityType="Self.tbl_FuarKatilimciProfil" />
+    <EntitySet Name="tbl_FuarResimler" EntityType="Self.tbl_FuarResimler" />
+    <EntitySet Name="tbl_FuarZiyaretciProfil" EntityType="Self.tbl_FuarZiyaretciProfil" />
+    <EntitySet Name="tbl_KatilimciFaaliyetAlani" EntityType="Self.tbl_KatilimciFaaliyetAlani" />
+    <EntitySet Name="tbl_KatilimciFaaliyetTuru" EntityType="Self.tbl_KatilimciFaaliyetTuru" />
+    <EntitySet Name="tbl_KatilimciFirma" EntityType="Self.tbl_KatilimciFirma" />
+    <EntitySet Name="tbl_KatilimciFirmaCalisanlar" EntityType="Self.tbl_KatilimciFirmaCalisanlar" />
+    <EntitySet Name="tbl_KatilimciKatildigiFuarlar" EntityType="Self.tbl_KatilimciKatildigiFuarlar" />
+    <EntitySet Name="tbl_KatilimciKatilimAmac" EntityType="Self.tbl_KatilimciKatilimAmac" />
+    <EntitySet Name="tbl_KatilimciProfil" EntityType="Self.tbl_KatilimciProfil" />
+    <EntitySet Name="tbl_Kisiler" EntityType="Self.tbl_Kisiler" />
+    <EntitySet Name="tbl_Kullanici" EntityType="Self.tbl_Kullanici" />
+    <EntitySet Name="tbl_OrganizatorFaaliyetAlani" EntityType="Self.tbl_OrganizatorFaaliyetAlani" />
+    <EntitySet Name="tbl_OrganizatorFaaliyetTuru" EntityType="Self.tbl_OrganizatorFaaliyetTuru" />
+    <EntitySet Name="tbl_OrganizatorFirma" EntityType="Self.tbl_OrganizatorFirma" />
+    <EntitySet Name="tbl_OrganizatorFirmaCalisanlar" EntityType="Self.tbl_OrganizatorFirmaCalisanlar" />
+    <EntitySet Name="tbl_OrganizatorKatildigiFuarlar" EntityType="Self.tbl_OrganizatorKatildigiFuarlar" />
+    <EntitySet Name="tbl_Pozisyon" EntityType="Self.tbl_Pozisyon" />
+    <EntitySet Name="tbl_UrunGruplari" EntityType="Self.tbl_UrunGruplari" />
+    <EntitySet Name="tbl_ZiyaretciFaaliyetAlani" EntityType="Self.tbl_ZiyaretciFaaliyetAlani" />
+    <EntitySet Name="tbl_ZiyaretciFaaliyetTuru" EntityType="Self.tbl_ZiyaretciFaaliyetTuru" />
+    <EntitySet Name="tbl_ZiyaretciFirma" EntityType="Self.tbl_ZiyaretciFirma" />
+    <EntitySet Name="tbl_ZiyaretciFirmaCalisanlar" EntityType="Self.tbl_ZiyaretciFirmaCalisanlar" />
+    <EntitySet Name="tbl_ZiyaretciIlgilendigiUrun" EntityType="Self.tbl_ZiyaretciIlgilendigiUrun" />
+    <EntitySet Name="tbl_ZiyaretciKatildigiFuarlar" EntityType="Self.tbl_ZiyaretciKatildigiFuarlar" />
+    <EntitySet Name="tbl_ZiyaretciKatilimAmaci" EntityType="Self.tbl_ZiyaretciKatilimAmaci" />
+    <EntitySet Name="tbl_ZiyaretciProfil" EntityType="Self.tbl_ZiyaretciProfil" />
+    <AssociationSet Name="FK_Ilceler_Sehirler" Association="Self.FK_Ilceler_Sehirler">
+      <End Role="Sehirler" EntitySet="Sehirler" />
+      <End Role="Ilceler" EntitySet="Ilceler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SemtMah_Ilceler" Association="Self.FK_SemtMah_Ilceler">
+      <End Role="Ilceler" EntitySet="Ilceler" />
+      <End Role="SemtMah" EntitySet="SemtMah" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BasinFirma_Ilceler" Association="Self.FK_tbl_BasinFirma_Ilceler">
+      <End Role="Ilceler" EntitySet="Ilceler" />
+      <End Role="tbl_BasinFirma" EntitySet="tbl_BasinFirma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Fuar_Ilceler" Association="Self.FK_tbl_Fuar_Ilceler">
+      <End Role="Ilceler" EntitySet="Ilceler" />
+      <End Role="tbl_Fuar" EntitySet="tbl_Fuar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_KatilimciFirma_Ilceler" Association="Self.FK_tbl_KatilimciFirma_Ilceler">
+      <End Role="Ilceler" EntitySet="Ilceler" />
+      <End Role="tbl_KatilimciFirma" EntitySet="tbl_KatilimciFirma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Kisiler_Ilceler" Association="Self.FK_tbl_Kisiler_Ilceler">
+      <End Role="Ilceler" EntitySet="Ilceler" />
+      <End Role="tbl_Kisiler" EntitySet="tbl_Kisiler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrganizatorFirma_Ilceler" Association="Self.FK_tbl_OrganizatorFirma_Ilceler">
+      <End Role="Ilceler" EntitySet="Ilceler" />
+      <End Role="tbl_OrganizatorFirma" EntitySet="tbl_OrganizatorFirma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciFirma_Ilceler" Association="Self.FK_tbl_ZiyaretciFirma_Ilceler">
+      <End Role="Ilceler" EntitySet="Ilceler" />
+      <End Role="tbl_ZiyaretciFirma" EntitySet="tbl_ZiyaretciFirma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BasinFirma_Sehirler" Association="Self.FK_tbl_BasinFirma_Sehirler">
+      <End Role="Sehirler" EntitySet="Sehirler" />
+      <End Role="tbl_BasinFirma" EntitySet="tbl_BasinFirma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Fuar_Sehirler" Association="Self.FK_tbl_Fuar_Sehirler">
+      <End Role="Sehirler" EntitySet="Sehirler" />
+      <End Role="tbl_Fuar" EntitySet="tbl_Fuar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_KatilimciFirma_Sehirler" Association="Self.FK_tbl_KatilimciFirma_Sehirler">
+      <End Role="Sehirler" EntitySet="Sehirler" />
+      <End Role="tbl_KatilimciFirma" EntitySet="tbl_KatilimciFirma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Kisiler_Sehirler" Association="Self.FK_tbl_Kisiler_Sehirler">
+      <End Role="Sehirler" EntitySet="Sehirler" />
+      <End Role="tbl_Kisiler" EntitySet="tbl_Kisiler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrganizatorFirma_Sehirler" Association="Self.FK_tbl_OrganizatorFirma_Sehirler">
+      <End Role="Sehirler" EntitySet="Sehirler" />
+      <End Role="tbl_OrganizatorFirma" EntitySet="tbl_OrganizatorFirma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciFirma_Sehirler" Association="Self.FK_tbl_ZiyaretciFirma_Sehirler">
+      <End Role="Sehirler" EntitySet="Sehirler" />
+      <End Role="tbl_ZiyaretciFirma" EntitySet="tbl_ZiyaretciFirma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BasinFirma_SemtMah" Association="Self.FK_tbl_BasinFirma_SemtMah">
+      <End Role="SemtMah" EntitySet="SemtMah" />
+      <End Role="tbl_BasinFirma" EntitySet="tbl_BasinFirma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Fuar_SemtMah" Association="Self.FK_tbl_Fuar_SemtMah">
+      <End Role="SemtMah" EntitySet="SemtMah" />
+      <End Role="tbl_Fuar" EntitySet="tbl_Fuar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_KatilimciFirma_SemtMah" Association="Self.FK_tbl_KatilimciFirma_SemtMah">
+      <End Role="SemtMah" EntitySet="SemtMah" />
+      <End Role="tbl_KatilimciFirma" EntitySet="tbl_KatilimciFirma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Kisiler_SemtMah" Association="Self.FK_tbl_Kisiler_SemtMah">
+      <End Role="SemtMah" EntitySet="SemtMah" />
+      <End Role="tbl_Kisiler" EntitySet="tbl_Kisiler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrganizatorFirma_SemtMah" Association="Self.FK_tbl_OrganizatorFirma_SemtMah">
+      <End Role="SemtMah" EntitySet="SemtMah" />
+      <End Role="tbl_OrganizatorFirma" EntitySet="tbl_OrganizatorFirma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciFirma_SemtMah" Association="Self.FK_tbl_ZiyaretciFirma_SemtMah">
+      <End Role="SemtMah" EntitySet="SemtMah" />
+      <End Role="tbl_ZiyaretciFirma" EntitySet="tbl_ZiyaretciFirma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_KatilimciKatilimAmac_tbl_Amac" Association="Self.FK_tbl_KatilimciKatilimAmac_tbl_Amac">
+      <End Role="tbl_Amac" EntitySet="tbl_Amac" />
+      <End Role="tbl_KatilimciKatilimAmac" EntitySet="tbl_KatilimciKatilimAmac" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciKatilimAmaci_tbl_Amac" Association="Self.FK_tbl_ZiyaretciKatilimAmaci_tbl_Amac">
+      <End Role="tbl_Amac" EntitySet="tbl_Amac" />
+      <End Role="tbl_ZiyaretciKatilimAmaci" EntitySet="tbl_ZiyaretciKatilimAmaci" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BasinFirmaCalisanlar_tbl_BasinFirma" Association="Self.FK_tbl_BasinFirmaCalisanlar_tbl_BasinFirma">
+      <End Role="tbl_BasinFirma" EntitySet="tbl_BasinFirma" />
+      <End Role="tbl_BasinFirmaCalisanlar" EntitySet="tbl_BasinFirmaCalisanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BasinKatildigiFuarlar_tbl_BasinFirma" Association="Self.FK_tbl_BasinKatildigiFuarlar_tbl_BasinFirma">
+      <End Role="tbl_BasinFirma" EntitySet="tbl_BasinFirma" />
+      <End Role="tbl_BasinKatildigiFuarlar" EntitySet="tbl_BasinKatildigiFuarlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BasinFirmaCalisanlar_tbl_Kisiler" Association="Self.FK_tbl_BasinFirmaCalisanlar_tbl_Kisiler">
+      <End Role="tbl_Kisiler" EntitySet="tbl_Kisiler" />
+      <End Role="tbl_BasinFirmaCalisanlar" EntitySet="tbl_BasinFirmaCalisanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_BasinKatildigiFuarlar_tbl_Fuar" Association="Self.FK_tbl_BasinKatildigiFuarlar_tbl_Fuar">
+      <End Role="tbl_Fuar" EntitySet="tbl_Fuar" />
+      <End Role="tbl_BasinKatildigiFuarlar" EntitySet="tbl_BasinKatildigiFuarlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Kisiler_tbl_Departman" Association="Self.FK_tbl_Kisiler_tbl_Departman">
+      <End Role="tbl_Departman" EntitySet="tbl_Departman" />
+      <End Role="tbl_Kisiler" EntitySet="tbl_Kisiler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_FaaliyetTuru_tbl_FaatliyetAlani" Association="Self.FK_tbl_FaaliyetTuru_tbl_FaatliyetAlani">
+      <End Role="tbl_FaatliyetAlani" EntitySet="tbl_FaatliyetAlani" />
+      <End Role="tbl_FaaliyetTuru" EntitySet="tbl_FaaliyetTuru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_FuarKapsamTuru_tbl_FaaliyetTuru" Association="Self.FK_tbl_FuarKapsamTuru_tbl_FaaliyetTuru">
+      <End Role="tbl_FaaliyetTuru" EntitySet="tbl_FaaliyetTuru" />
+      <End Role="tbl_FuarKapsamTuru" EntitySet="tbl_FuarKapsamTuru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_KatilimciFaaliyetTuru_tbl_FaaliyetTuru" Association="Self.FK_tbl_KatilimciFaaliyetTuru_tbl_FaaliyetTuru">
+      <End Role="tbl_FaaliyetTuru" EntitySet="tbl_FaaliyetTuru" />
+      <End Role="tbl_KatilimciFaaliyetTuru" EntitySet="tbl_KatilimciFaaliyetTuru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrganizatorFaaliyetTuru_tbl_FaaliyetTuru" Association="Self.FK_tbl_OrganizatorFaaliyetTuru_tbl_FaaliyetTuru">
+      <End Role="tbl_FaaliyetTuru" EntitySet="tbl_FaaliyetTuru" />
+      <End Role="tbl_OrganizatorFaaliyetTuru" EntitySet="tbl_OrganizatorFaaliyetTuru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciFaaliyetAlani_tbl_FaaliyetTuru" Association="Self.FK_tbl_ZiyaretciFaaliyetAlani_tbl_FaaliyetTuru">
+      <End Role="tbl_FaaliyetTuru" EntitySet="tbl_FaaliyetTuru" />
+      <End Role="tbl_ZiyaretciFaaliyetAlani" EntitySet="tbl_ZiyaretciFaaliyetAlani" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_FuarKapsamAlani_tbl_FaatliyetAlani" Association="Self.FK_tbl_FuarKapsamAlani_tbl_FaatliyetAlani">
+      <End Role="tbl_FaatliyetAlani" EntitySet="tbl_FaatliyetAlani" />
+      <End Role="tbl_FuarKapsamAlani" EntitySet="tbl_FuarKapsamAlani" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_KatilimciFaaliyetAlani_tbl_FaatliyetAlani" Association="Self.FK_tbl_KatilimciFaaliyetAlani_tbl_FaatliyetAlani">
+      <End Role="tbl_FaatliyetAlani" EntitySet="tbl_FaatliyetAlani" />
+      <End Role="tbl_KatilimciFaaliyetAlani" EntitySet="tbl_KatilimciFaaliyetAlani" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrganizatorFaaliyetAlani_tbl_FaatliyetAlani" Association="Self.FK_tbl_OrganizatorFaaliyetAlani_tbl_FaatliyetAlani">
+      <End Role="tbl_FaatliyetAlani" EntitySet="tbl_FaatliyetAlani" />
+      <End Role="tbl_OrganizatorFaaliyetAlani" EntitySet="tbl_OrganizatorFaaliyetAlani" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciFaaliyetTuru_tbl_FaatliyetAlani" Association="Self.FK_tbl_ZiyaretciFaaliyetTuru_tbl_FaatliyetAlani">
+      <End Role="tbl_FaatliyetAlani" EntitySet="tbl_FaatliyetAlani" />
+      <End Role="tbl_ZiyaretciFaaliyetTuru" EntitySet="tbl_ZiyaretciFaaliyetTuru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_FuarBasinBulteni_tbl_Fuar" Association="Self.FK_tbl_FuarBasinBulteni_tbl_Fuar">
+      <End Role="tbl_Fuar" EntitySet="tbl_Fuar" />
+      <End Role="tbl_FuarBasinBulteni" EntitySet="tbl_FuarBasinBulteni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_FuarKapsamAlani_tbl_Fuar" Association="Self.FK_tbl_FuarKapsamAlani_tbl_Fuar">
+      <End Role="tbl_Fuar" EntitySet="tbl_Fuar" />
+      <End Role="tbl_FuarKapsamAlani" EntitySet="tbl_FuarKapsamAlani" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_FuarKapsamTuru_tbl_Fuar" Association="Self.FK_tbl_FuarKapsamTuru_tbl_Fuar">
+      <End Role="tbl_Fuar" EntitySet="tbl_Fuar" />
+      <End Role="tbl_FuarKapsamTuru" EntitySet="tbl_FuarKapsamTuru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_FuarKatilimciProfil_tbl_Fuar" Association="Self.FK_tbl_FuarKatilimciProfil_tbl_Fuar">
+      <End Role="tbl_Fuar" EntitySet="tbl_Fuar" />
+      <End Role="tbl_FuarKatilimciProfil" EntitySet="tbl_FuarKatilimciProfil" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_FuarResimler_tbl_Fuar" Association="Self.FK_tbl_FuarResimler_tbl_Fuar">
+      <End Role="tbl_Fuar" EntitySet="tbl_Fuar" />
+      <End Role="tbl_FuarResimler" EntitySet="tbl_FuarResimler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_FuarZiyaretciProfil_tbl_Fuar" Association="Self.FK_tbl_FuarZiyaretciProfil_tbl_Fuar">
+      <End Role="tbl_Fuar" EntitySet="tbl_Fuar" />
+      <End Role="tbl_FuarZiyaretciProfil" EntitySet="tbl_FuarZiyaretciProfil" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_KatilimciKatildigiFuarlar_tbl_Fuar" Association="Self.FK_tbl_KatilimciKatildigiFuarlar_tbl_Fuar">
+      <End Role="tbl_Fuar" EntitySet="tbl_Fuar" />
+      <End Role="tbl_KatilimciKatildigiFuarlar" EntitySet="tbl_KatilimciKatildigiFuarlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrganizatorKatildigiFuarlar_tbl_Fuar" Association="Self.FK_tbl_OrganizatorKatildigiFuarlar_tbl_Fuar">
+      <End Role="tbl_Fuar" EntitySet="tbl_Fuar" />
+      <End Role="tbl_OrganizatorKatildigiFuarlar" EntitySet="tbl_OrganizatorKatildigiFuarlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciKatildigiFuarlar_tbl_Fuar" Association="Self.FK_tbl_ZiyaretciKatildigiFuarlar_tbl_Fuar">
+      <End Role="tbl_Fuar" EntitySet="tbl_Fuar" />
+      <End Role="tbl_ZiyaretciKatildigiFuarlar" EntitySet="tbl_ZiyaretciKatildigiFuarlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_FuarKatilimciProfil_tbl_KatilimciProfil" Association="Self.FK_tbl_FuarKatilimciProfil_tbl_KatilimciProfil">
+      <End Role="tbl_KatilimciProfil" EntitySet="tbl_KatilimciProfil" />
+      <End Role="tbl_FuarKatilimciProfil" EntitySet="tbl_FuarKatilimciProfil" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_FuarZiyaretciProfil_tbl_ZiyaretciProfil" Association="Self.FK_tbl_FuarZiyaretciProfil_tbl_ZiyaretciProfil">
+      <End Role="tbl_ZiyaretciProfil" EntitySet="tbl_ZiyaretciProfil" />
+      <End Role="tbl_FuarZiyaretciProfil" EntitySet="tbl_FuarZiyaretciProfil" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_KatilimciFaaliyetAlani_tbl_KatilimciFirma" Association="Self.FK_tbl_KatilimciFaaliyetAlani_tbl_KatilimciFirma">
+      <End Role="tbl_KatilimciFirma" EntitySet="tbl_KatilimciFirma" />
+      <End Role="tbl_KatilimciFaaliyetAlani" EntitySet="tbl_KatilimciFaaliyetAlani" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_KatilimciFaaliyetTuru_tbl_KatilimciFirma" Association="Self.FK_tbl_KatilimciFaaliyetTuru_tbl_KatilimciFirma">
+      <End Role="tbl_KatilimciFirma" EntitySet="tbl_KatilimciFirma" />
+      <End Role="tbl_KatilimciFaaliyetTuru" EntitySet="tbl_KatilimciFaaliyetTuru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_KatilimciFirmaCalisanlar_tbl_KatilimciFirma" Association="Self.FK_tbl_KatilimciFirmaCalisanlar_tbl_KatilimciFirma">
+      <End Role="tbl_KatilimciFirma" EntitySet="tbl_KatilimciFirma" />
+      <End Role="tbl_KatilimciFirmaCalisanlar" EntitySet="tbl_KatilimciFirmaCalisanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_KatilimciKatildigiFuarlar_tbl_KatilimciFirma" Association="Self.FK_tbl_KatilimciKatildigiFuarlar_tbl_KatilimciFirma">
+      <End Role="tbl_KatilimciFirma" EntitySet="tbl_KatilimciFirma" />
+      <End Role="tbl_KatilimciKatildigiFuarlar" EntitySet="tbl_KatilimciKatildigiFuarlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_KatilimciKatilimAmac_tbl_KatilimciFirma" Association="Self.FK_tbl_KatilimciKatilimAmac_tbl_KatilimciFirma">
+      <End Role="tbl_KatilimciFirma" EntitySet="tbl_KatilimciFirma" />
+      <End Role="tbl_KatilimciKatilimAmac" EntitySet="tbl_KatilimciKatilimAmac" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_KatilimciFirmaCalisanlar_tbl_Kisiler" Association="Self.FK_tbl_KatilimciFirmaCalisanlar_tbl_Kisiler">
+      <End Role="tbl_Kisiler" EntitySet="tbl_Kisiler" />
+      <End Role="tbl_KatilimciFirmaCalisanlar" EntitySet="tbl_KatilimciFirmaCalisanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Kisiler_tbl_Kullanici" Association="Self.FK_tbl_Kisiler_tbl_Kullanici">
+      <End Role="tbl_Kullanici" EntitySet="tbl_Kullanici" />
+      <End Role="tbl_Kisiler" EntitySet="tbl_Kisiler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Kisiler_tbl_Pozisyon" Association="Self.FK_tbl_Kisiler_tbl_Pozisyon">
+      <End Role="tbl_Pozisyon" EntitySet="tbl_Pozisyon" />
+      <End Role="tbl_Kisiler" EntitySet="tbl_Kisiler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrganizatorFirmaCalisanlar_tbl_Kisiler" Association="Self.FK_tbl_OrganizatorFirmaCalisanlar_tbl_Kisiler">
+      <End Role="tbl_Kisiler" EntitySet="tbl_Kisiler" />
+      <End Role="tbl_OrganizatorFirmaCalisanlar" EntitySet="tbl_OrganizatorFirmaCalisanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciFirmaCalisanlar_tbl_Kisiler" Association="Self.FK_tbl_ZiyaretciFirmaCalisanlar_tbl_Kisiler">
+      <End Role="tbl_Kisiler" EntitySet="tbl_Kisiler" />
+      <End Role="tbl_ZiyaretciFirmaCalisanlar" EntitySet="tbl_ZiyaretciFirmaCalisanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrganizatorFaaliyetAlani_tbl_OrganizatorFirma" Association="Self.FK_tbl_OrganizatorFaaliyetAlani_tbl_OrganizatorFirma">
+      <End Role="tbl_OrganizatorFirma" EntitySet="tbl_OrganizatorFirma" />
+      <End Role="tbl_OrganizatorFaaliyetAlani" EntitySet="tbl_OrganizatorFaaliyetAlani" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrganizatorFaaliyetTuru_tbl_OrganizatorFirma" Association="Self.FK_tbl_OrganizatorFaaliyetTuru_tbl_OrganizatorFirma">
+      <End Role="tbl_OrganizatorFirma" EntitySet="tbl_OrganizatorFirma" />
+      <End Role="tbl_OrganizatorFaaliyetTuru" EntitySet="tbl_OrganizatorFaaliyetTuru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrganizatorFirmaCalisanlar_tbl_OrganizatorFirma" Association="Self.FK_tbl_OrganizatorFirmaCalisanlar_tbl_OrganizatorFirma">
+      <End Role="tbl_OrganizatorFirma" EntitySet="tbl_OrganizatorFirma" />
+      <End Role="tbl_OrganizatorFirmaCalisanlar" EntitySet="tbl_OrganizatorFirmaCalisanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_OrganizatorKatildigiFuarlar_tbl_OrganizatorFirma" Association="Self.FK_tbl_OrganizatorKatildigiFuarlar_tbl_OrganizatorFirma">
+      <End Role="tbl_OrganizatorFirma" EntitySet="tbl_OrganizatorFirma" />
+      <End Role="tbl_OrganizatorKatildigiFuarlar" EntitySet="tbl_OrganizatorKatildigiFuarlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciIlgilendigiUrun_tbl_UrunGruplari" Association="Self.FK_tbl_ZiyaretciIlgilendigiUrun_tbl_UrunGruplari">
+      <End Role="tbl_UrunGruplari" EntitySet="tbl_UrunGruplari" />
+      <End Role="tbl_ZiyaretciIlgilendigiUrun" EntitySet="tbl_ZiyaretciIlgilendigiUrun" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciFaaliyetAlani_tbl_ZiyaretciFirma" Association="Self.FK_tbl_ZiyaretciFaaliyetAlani_tbl_ZiyaretciFirma">
+      <End Role="tbl_ZiyaretciFirma" EntitySet="tbl_ZiyaretciFirma" />
+      <End Role="tbl_ZiyaretciFaaliyetAlani" EntitySet="tbl_ZiyaretciFaaliyetAlani" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciFaaliyetTuru_tbl_ZiyaretciFirma" Association="Self.FK_tbl_ZiyaretciFaaliyetTuru_tbl_ZiyaretciFirma">
+      <End Role="tbl_ZiyaretciFirma" EntitySet="tbl_ZiyaretciFirma" />
+      <End Role="tbl_ZiyaretciFaaliyetTuru" EntitySet="tbl_ZiyaretciFaaliyetTuru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciFirmaCalisanlar_tbl_ZiyaretciFirma" Association="Self.FK_tbl_ZiyaretciFirmaCalisanlar_tbl_ZiyaretciFirma">
+      <End Role="tbl_ZiyaretciFirma" EntitySet="tbl_ZiyaretciFirma" />
+      <End Role="tbl_ZiyaretciFirmaCalisanlar" EntitySet="tbl_ZiyaretciFirmaCalisanlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciIlgilendigiUrun_tbl_ZiyaretciFirma" Association="Self.FK_tbl_ZiyaretciIlgilendigiUrun_tbl_ZiyaretciFirma">
+      <End Role="tbl_ZiyaretciFirma" EntitySet="tbl_ZiyaretciFirma" />
+      <End Role="tbl_ZiyaretciIlgilendigiUrun" EntitySet="tbl_ZiyaretciIlgilendigiUrun" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciKatildigiFuarlar_tbl_ZiyaretciFirma" Association="Self.FK_tbl_ZiyaretciKatildigiFuarlar_tbl_ZiyaretciFirma">
+      <End Role="tbl_ZiyaretciFirma" EntitySet="tbl_ZiyaretciFirma" />
+      <End Role="tbl_ZiyaretciKatildigiFuarlar" EntitySet="tbl_ZiyaretciKatildigiFuarlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZiyaretciKatilimAmaci_tbl_ZiyaretciFirma" Association="Self.FK_tbl_ZiyaretciKatilimAmaci_tbl_ZiyaretciFirma">
+      <End Role="tbl_ZiyaretciFirma" EntitySet="tbl_ZiyaretciFirma" />
+      <End Role="tbl_ZiyaretciKatilimAmaci" EntitySet="tbl_ZiyaretciKatilimAmaci" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

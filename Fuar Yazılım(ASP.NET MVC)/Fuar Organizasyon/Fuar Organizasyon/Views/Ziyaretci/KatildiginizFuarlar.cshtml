@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Fuar_Organizasyon.Models.tbl_Fuar>
+
+@{
+    ViewBag.Title = "KatildiginizFuarlar";
+    Layout = "~/Views/Shared/_LayoutziyaretciPanel.cshtml";
+}
+
+<h2>KatildiginizFuarlar</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fuarAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuarTelNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuarFax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuarBaslamaTarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuarBitisTarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuarFacebookUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuarInstagramUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuarTwitterUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuarOnay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ilceler.IlceAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sehirler.SehirAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SemtMah.SemtAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fuarAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fuarTelNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fuarFax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fuarBaslamaTarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fuarBitisTarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fuarFacebookUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fuarInstagramUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fuarTwitterUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fuarOnay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ilceler.IlceAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sehirler.SehirAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SemtMah.SemtAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.fuarId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.fuarId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.fuarId })
+        </td>
+    </tr>
+}
+
+</table>

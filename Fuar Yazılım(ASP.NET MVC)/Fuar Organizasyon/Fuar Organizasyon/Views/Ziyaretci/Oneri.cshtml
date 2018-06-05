@@ -1,0 +1,31 @@
+﻿@model List<Fuar_Organizasyon.Models.CheckModel>
+
+@{
+    ViewBag.Title = "kisiselBilgi";
+    Layout = "~/Views/Shared/_LayoutziyaretciPanel.cshtml";
+}
+
+<h2>Oneri sistemi için 10 adet firma seçiniz</h2>
+
+@using (Html.BeginForm())
+{
+    for (var i = 0; i < Model.Count(); i++)
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.HiddenFor(it => it[i].Id)
+                    @Html.DisplayFor(it => it[i].Name)
+                </td>
+                <td>
+                    @Html.CheckBoxFor(it => it[i].Checked, new { Style = "vertical-align:3px}" })
+                </td>
+            </tr>
+        </table>
+
+    }
+
+    <input id="Submit1" type="submit" value="Gönder" />
+
+}
+

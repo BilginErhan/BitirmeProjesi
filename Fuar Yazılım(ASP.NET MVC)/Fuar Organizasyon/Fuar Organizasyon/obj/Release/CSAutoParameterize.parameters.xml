@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="FuarDatabaseEntities-Web.config Connection String" description="FuarDatabaseEntities Veritabanına erişmek için uygulama tarafından web.config'de kullanılan Bağlantı Dizesi." defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-AFBOCC3;initial catalog=FuarDatabase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\bilgin\\documents\\visual\ studio\ 2017\\Projects\\Fuar\ Organizasyon\\Fuar\ Organizasyon\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='FuarDatabaseEntities']/@connectionString" />
+  </parameter>
+</parameters>

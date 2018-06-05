@@ -1,0 +1,253 @@
+﻿@model Fuar_Organizasyon.Models.tbl_KatilimciFirma
+
+@{
+    ViewBag.Title = "FirmaBilgi";
+    Layout = "~/Views/Shared/_LayoutkatilimciPanel.cshtml";
+}
+
+<h2>FirmaBilgi</h2>
+
+@using (Html.BeginForm("FirmaBilgi", "Katilimci", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>tbl_OrganizatorFirma</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.kId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.kFirmaAdi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.kFirmaAdi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.kFirmaAdi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.kWebSiteUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.kWebSiteUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.kWebSiteUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.kTelefon, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.kTelefon, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.kTelefon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.kFax, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.kFax, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.kFax, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.kMail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.kMail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.kMail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.kResimUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Editor("resimYukle", new { htmlAttributes = new { @class = "form-control", @type = "file", @accept = "image/x-png,image/gif,image/jpeg" } })
+                <div id="resim">
+                    @{
+                        if (ViewBag.resimUrl != null)
+                        {
+                            <img id="img" src='@Href(@ViewBag.resimUrl)' alt="Firma Resim" height="150" width="150" />
+                        }
+                    }
+                </div>
+                @Html.ValidationMessageFor(model => model.kResimUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SehirId, "SehirId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.SehirId, (List<SelectListItem>)ViewBag.Sehirler, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SehirId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ilceId, "ilceId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ilceId, (List<SelectListItem>)ViewBag.Ilceler, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ilceId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SemtMahId, "SemtMahId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.SemtMahId, (List<SelectListItem>)ViewBag.Mahalleler, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SemtMahId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Calisan Ekle", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("calisan", (List<SelectListItem>)ViewBag.Calisanlar, htmlAttributes: new { @class = "form-control", @multiple = "multiple" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Faaliyet Alanlı Ekle", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("faaliyetAlani", (List<SelectListItem>)ViewBag.FaaliyetAlanlari, htmlAttributes: new { @class = "form-control", @multiple = "multiple" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Faaliyet Turu", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("faaliyetTuru", (List<SelectListItem>)ViewBag.FaaliyetTurleri, htmlAttributes: new { @class = "form-control", @multiple = "multiple" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Katılım Amacı", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("katilimAmac", (List<SelectListItem>)ViewBag.katilimAmac, htmlAttributes: new { @class = "form-control", @multiple = "multiple" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Güncelle" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+                        }
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#calisan').multiselect({
+                enableFiltering: true,
+                filterPlaceholder: 'Search for something...'
+            });
+            $('#faaliyetAlani').multiselect({
+                enableFiltering: true,
+                filterPlaceholder: 'Search for something...'
+            });
+            $('#faaliyetTuru').multiselect({
+                enableFiltering: true,
+                filterPlaceholder: 'Search for something...'
+            });
+            $('#katilimAmac').multiselect({
+                enableFiltering: true,
+                filterPlaceholder: 'Search for something...'
+            });
+
+            var preview = $("#resim");
+
+            $("#resimYukle").change(function (event) {
+                var input = $(event.currentTarget);
+                var file = input[0].files[0];
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    image_base64 = e.target.result;
+                    $("img").remove();
+                    preview.append("<img id='img' src='" + image_base64 + "' height='150' width='150' />");
+                };
+                reader.readAsDataURL(file);
+            });
+
+        //İlçe getime fonksiyonu
+        $('#SehirId').change(function () {
+            //ilçe dropdownlist içerisini boşaltma
+            var x = document.getElementById("ilceId");
+            for (var i = x.options.length - 1; i >= 0; i--) {
+                x.options[i] = null;
+            }
+
+            var SehirId = $(this).val();
+
+            if (SehirId != null && SehirId != '') {
+                $.ajax({
+                    type: "post",
+                    url: '@Url.Action("ilce_getir", "Home")',
+                    data: { SehirId: SehirId },
+                    success: function (ilceler) {
+                        $.each(ilceler, function (index, ilce) {
+                            $('#ilceId').append($('<option/>', {
+                                value: ilce.ilceId,
+                                text: ilce.IlceAdi
+                            }));
+                        });
+                    },
+                    error: function () {
+
+                        alert("Hata");
+                    },
+                    beforeSend: function () {
+
+                    },
+                    complete: function () {
+
+                    }
+                });
+            }
+        });
+
+
+
+        //semt mahalle getirme fonksiyonu
+        $('#ilceId').change(function () {
+            //ilçe dropdownlist içerisini boşaltma
+            var x = document.getElementById("SemtMahId");
+            for(var i = x.options.length-1; i >= 0; i--) {
+                x.options[i] = null;
+            }
+
+            var ilceId = $(this).val();
+
+            if (ilceId != null && ilceId != '') {
+                $.ajax({
+                    type: "post",
+                    url: '@Url.Action("mahalle_getir", "Home")',
+                    data: { ilceId: ilceId },
+                    success: function (mahalleler) {
+                        $.each(mahalleler, function (index, mahalle) {
+                            $('#SemtMahId').append($('<option/>', {
+                                value: mahalle.SemtMahId,
+                                text: mahalle.MahalleAdi
+                            }));
+                        });
+                    },
+                    error: function () {
+
+                        alert("Hata");
+                    },
+                    beforeSend: function () {
+
+                    },
+                    complete: function () {
+
+                    }
+                });
+            }
+        });
+    });
+    </script>
+}

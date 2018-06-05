@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FuarDatabaseModelStoreContainer" CdmEntityContainer="FuarDatabaseEntities">
+    <EntitySetMapping Name="Ilceler">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.Ilceler">
+        <MappingFragment StoreEntitySet="Ilceler">
+          <ScalarProperty Name="ilceId" ColumnName="ilceId" />
+          <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+          <ScalarProperty Name="SehirAdi" ColumnName="SehirAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sehirler">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.Sehirler">
+        <MappingFragment StoreEntitySet="Sehirler">
+          <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+          <ScalarProperty Name="SehirAdi" ColumnName="SehirAdi" />
+          <ScalarProperty Name="PlakaNo" ColumnName="PlakaNo" />
+          <ScalarProperty Name="TelefonKodu" ColumnName="TelefonKodu" />
+          <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SemtMah">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.SemtMah">
+        <MappingFragment StoreEntitySet="SemtMah">
+          <ScalarProperty Name="SemtMahId" ColumnName="SemtMahId" />
+          <ScalarProperty Name="SemtAdi" ColumnName="SemtAdi" />
+          <ScalarProperty Name="MahalleAdi" ColumnName="MahalleAdi" />
+          <ScalarProperty Name="PostaKodu" ColumnName="PostaKodu" />
+          <ScalarProperty Name="ilceId" ColumnName="ilceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Amac">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_Amac">
+        <MappingFragment StoreEntitySet="tbl_Amac">
+          <ScalarProperty Name="amacId" ColumnName="amacId" />
+          <ScalarProperty Name="amacAdi" ColumnName="amacAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_BasinFirma">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_BasinFirma">
+        <MappingFragment StoreEntitySet="tbl_BasinFirma">
+          <ScalarProperty Name="bId" ColumnName="bId" />
+          <ScalarProperty Name="bFirmaAdi" ColumnName="bFirmaAdi" />
+          <ScalarProperty Name="bWebSiteUrl" ColumnName="bWebSiteUrl" />
+          <ScalarProperty Name="bTelefon" ColumnName="bTelefon" />
+          <ScalarProperty Name="bFax" ColumnName="bFax" />
+          <ScalarProperty Name="bMail" ColumnName="bMail" />
+          <ScalarProperty Name="bResimUrl" ColumnName="bResimUrl" />
+          <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+          <ScalarProperty Name="ilceId" ColumnName="ilceId" />
+          <ScalarProperty Name="SemtMahId" ColumnName="SemtMahId" />
+          <ScalarProperty Name="bOnay" ColumnName="bOnay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_BasinFirmaCalisanlar">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_BasinFirmaCalisanlar">
+        <MappingFragment StoreEntitySet="tbl_BasinFirmaCalisanlar">
+          <ScalarProperty Name="bCalisanlarId" ColumnName="bCalisanlarId" />
+          <ScalarProperty Name="bId" ColumnName="bId" />
+          <ScalarProperty Name="kisiId" ColumnName="kisiId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_BasinKatildigiFuarlar">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_BasinKatildigiFuarlar">
+        <MappingFragment StoreEntitySet="tbl_BasinKatildigiFuarlar">
+          <ScalarProperty Name="bKatildigiFuarId" ColumnName="bKatildigiFuarId" />
+          <ScalarProperty Name="bId" ColumnName="bId" />
+          <ScalarProperty Name="fuarId" ColumnName="fuarId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Departman">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_Departman">
+        <MappingFragment StoreEntitySet="tbl_Departman">
+          <ScalarProperty Name="departmanId" ColumnName="departmanId" />
+          <ScalarProperty Name="departmanAdi" ColumnName="departmanAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_FaaliyetTuru">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_FaaliyetTuru">
+        <MappingFragment StoreEntitySet="tbl_FaaliyetTuru">
+          <ScalarProperty Name="faaliyetTuruId" ColumnName="faaliyetTuruId" />
+          <ScalarProperty Name="faaliyetAlaniId" ColumnName="faaliyetAlaniId" />
+          <ScalarProperty Name="faaliyetTuruAdi" ColumnName="faaliyetTuruAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_FaatliyetAlani">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_FaatliyetAlani">
+        <MappingFragment StoreEntitySet="tbl_FaatliyetAlani">
+          <ScalarProperty Name="faaliyetAlaniId" ColumnName="faaliyetAlaniId" />
+          <ScalarProperty Name="faaliyetAlaniAdi" ColumnName="faaliyetAlaniAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Fuar">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_Fuar">
+        <MappingFragment StoreEntitySet="tbl_Fuar">
+          <ScalarProperty Name="fuarId" ColumnName="fuarId" />
+          <ScalarProperty Name="fuarAdi" ColumnName="fuarAdi" />
+          <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+          <ScalarProperty Name="ilceId" ColumnName="ilceId" />
+          <ScalarProperty Name="SemtMahId" ColumnName="SemtMahId" />
+          <ScalarProperty Name="fuarTelNo" ColumnName="fuarTelNo" />
+          <ScalarProperty Name="fuarFax" ColumnName="fuarFax" />
+          <ScalarProperty Name="fuarBaslamaTarih" ColumnName="fuarBaslamaTarih" />
+          <ScalarProperty Name="fuarBitisTarih" ColumnName="fuarBitisTarih" />
+          <ScalarProperty Name="fuarFacebookUrl" ColumnName="fuarFacebookUrl" />
+          <ScalarProperty Name="fuarInstagramUrl" ColumnName="fuarInstagramUrl" />
+          <ScalarProperty Name="fuarTwitterUrl" ColumnName="fuarTwitterUrl" />
+          <ScalarProperty Name="fuarOnay" ColumnName="fuarOnay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_FuarBasinBulteni">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_FuarBasinBulteni">
+        <MappingFragment StoreEntitySet="tbl_FuarBasinBulteni">
+          <ScalarProperty Name="fBultenId" ColumnName="fBultenId" />
+          <ScalarProperty Name="fuarId" ColumnName="fuarId" />
+          <ScalarProperty Name="basinBaslik" ColumnName="basinBaslik" />
+          <ScalarProperty Name="basinIcerik" ColumnName="basinIcerik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_FuarKapsamAlani">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_FuarKapsamAlani">
+        <MappingFragment StoreEntitySet="tbl_FuarKapsamAlani">
+          <ScalarProperty Name="fKapsamAlaniId" ColumnName="fKapsamAlaniId" />
+          <ScalarProperty Name="fuarId" ColumnName="fuarId" />
+          <ScalarProperty Name="faaliyetAlaniId" ColumnName="faaliyetAlaniId" />
+          <ScalarProperty Name="diger" ColumnName="diger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_FuarKapsamTuru">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_FuarKapsamTuru">
+        <MappingFragment StoreEntitySet="tbl_FuarKapsamTuru">
+          <ScalarProperty Name="fKapsamTuruId" ColumnName="fKapsamTuruId" />
+          <ScalarProperty Name="fuarId" ColumnName="fuarId" />
+          <ScalarProperty Name="faaliyetTuruId" ColumnName="faaliyetTuruId" />
+          <ScalarProperty Name="diger" ColumnName="diger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_FuarKatilimciProfil">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_FuarKatilimciProfil">
+        <MappingFragment StoreEntitySet="tbl_FuarKatilimciProfil">
+          <ScalarProperty Name="fKatilimId" ColumnName="fKatilimId" />
+          <ScalarProperty Name="fuarId" ColumnName="fuarId" />
+          <ScalarProperty Name="kProfilId" ColumnName="kProfilId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_FuarResimler">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_FuarResimler">
+        <MappingFragment StoreEntitySet="tbl_FuarResimler">
+          <ScalarProperty Name="fResimId" ColumnName="fResimId" />
+          <ScalarProperty Name="fuarId" ColumnName="fuarId" />
+          <ScalarProperty Name="resimUrl" ColumnName="resimUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_FuarZiyaretciProfil">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_FuarZiyaretciProfil">
+        <MappingFragment StoreEntitySet="tbl_FuarZiyaretciProfil">
+          <ScalarProperty Name="fZiyaretciId" ColumnName="fZiyaretciId" />
+          <ScalarProperty Name="fuarId" ColumnName="fuarId" />
+          <ScalarProperty Name="zProfilId" ColumnName="zProfilId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KatilimciFaaliyetAlani">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_KatilimciFaaliyetAlani">
+        <MappingFragment StoreEntitySet="tbl_KatilimciFaaliyetAlani">
+          <ScalarProperty Name="kFaaliyetAlaniId" ColumnName="kFaaliyetAlaniId" />
+          <ScalarProperty Name="kId" ColumnName="kId" />
+          <ScalarProperty Name="faaliyetAlaniId" ColumnName="faaliyetAlaniId" />
+          <ScalarProperty Name="diger" ColumnName="diger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KatilimciFaaliyetTuru">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_KatilimciFaaliyetTuru">
+        <MappingFragment StoreEntitySet="tbl_KatilimciFaaliyetTuru">
+          <ScalarProperty Name="kFaaliyetTuruId" ColumnName="kFaaliyetTuruId" />
+          <ScalarProperty Name="kId" ColumnName="kId" />
+          <ScalarProperty Name="faaliyetTuruId" ColumnName="faaliyetTuruId" />
+          <ScalarProperty Name="diger" ColumnName="diger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KatilimciFirma">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_KatilimciFirma">
+        <MappingFragment StoreEntitySet="tbl_KatilimciFirma">
+          <ScalarProperty Name="kId" ColumnName="kId" />
+          <ScalarProperty Name="kFirmaAdi" ColumnName="kFirmaAdi" />
+          <ScalarProperty Name="kWebSiteUrl" ColumnName="kWebSiteUrl" />
+          <ScalarProperty Name="kTelefon" ColumnName="kTelefon" />
+          <ScalarProperty Name="kFax" ColumnName="kFax" />
+          <ScalarProperty Name="kMail" ColumnName="kMail" />
+          <ScalarProperty Name="kResimUrl" ColumnName="kResimUrl" />
+          <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+          <ScalarProperty Name="ilceId" ColumnName="ilceId" />
+          <ScalarProperty Name="SemtMahId" ColumnName="SemtMahId" />
+          <ScalarProperty Name="kCalisanSayisi" ColumnName="kCalisanSayisi" />
+          <ScalarProperty Name="kOnay" ColumnName="kOnay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KatilimciFirmaCalisanlar">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_KatilimciFirmaCalisanlar">
+        <MappingFragment StoreEntitySet="tbl_KatilimciFirmaCalisanlar">
+          <ScalarProperty Name="kCalisanId" ColumnName="kCalisanId" />
+          <ScalarProperty Name="kId" ColumnName="kId" />
+          <ScalarProperty Name="kisiId" ColumnName="kisiId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KatilimciKatildigiFuarlar">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_KatilimciKatildigiFuarlar">
+        <MappingFragment StoreEntitySet="tbl_KatilimciKatildigiFuarlar">
+          <ScalarProperty Name="kKatildigiFuarId" ColumnName="kKatildigiFuarId" />
+          <ScalarProperty Name="kId" ColumnName="kId" />
+          <ScalarProperty Name="fuarId" ColumnName="fuarId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KatilimciKatilimAmac">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_KatilimciKatilimAmac">
+        <MappingFragment StoreEntitySet="tbl_KatilimciKatilimAmac">
+          <ScalarProperty Name="kKatilimAmacId" ColumnName="kKatilimAmacId" />
+          <ScalarProperty Name="kId" ColumnName="kId" />
+          <ScalarProperty Name="amacId" ColumnName="amacId" />
+          <ScalarProperty Name="diger" ColumnName="diger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KatilimciProfil">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_KatilimciProfil">
+        <MappingFragment StoreEntitySet="tbl_KatilimciProfil">
+          <ScalarProperty Name="kProfilId" ColumnName="kProfilId" />
+          <ScalarProperty Name="kProfilAdi" ColumnName="kProfilAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Kisiler">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_Kisiler">
+        <MappingFragment StoreEntitySet="tbl_Kisiler">
+          <ScalarProperty Name="kisiId" ColumnName="kisiId" />
+          <ScalarProperty Name="kisiIsim" ColumnName="kisiIsim" />
+          <ScalarProperty Name="kisiSoyisim" ColumnName="kisiSoyisim" />
+          <ScalarProperty Name="kisiTelefon" ColumnName="kisiTelefon" />
+          <ScalarProperty Name="kisiTcNo" ColumnName="kisiTcNo" />
+          <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+          <ScalarProperty Name="ilceId" ColumnName="ilceId" />
+          <ScalarProperty Name="SemtMahId" ColumnName="SemtMahId" />
+          <ScalarProperty Name="kisiMail" ColumnName="kisiMail" />
+          <ScalarProperty Name="kisiResimUrl" ColumnName="kisiResimUrl" />
+          <ScalarProperty Name="departmanId" ColumnName="departmanId" />
+          <ScalarProperty Name="pozisyonId" ColumnName="pozisyonId" />
+          <ScalarProperty Name="kullaniciId" ColumnName="kullaniciId" />
+          <ScalarProperty Name="kullaniciTuru" ColumnName="kullaniciTuru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Kullanici">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_Kullanici">
+        <MappingFragment StoreEntitySet="tbl_Kullanici">
+          <ScalarProperty Name="kullaniciId" ColumnName="kullaniciId" />
+          <ScalarProperty Name="kullaniciAdi" ColumnName="kullaniciAdi" />
+          <ScalarProperty Name="kullaniciSifre" ColumnName="kullaniciSifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_OrganizatorFaaliyetAlani">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_OrganizatorFaaliyetAlani">
+        <MappingFragment StoreEntitySet="tbl_OrganizatorFaaliyetAlani">
+          <ScalarProperty Name="oFaaliyetAlaniId" ColumnName="oFaaliyetAlaniId" />
+          <ScalarProperty Name="oId" ColumnName="oId" />
+          <ScalarProperty Name="faaliyetAlaniId" ColumnName="faaliyetAlaniId" />
+          <ScalarProperty Name="diger" ColumnName="diger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_OrganizatorFaaliyetTuru">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_OrganizatorFaaliyetTuru">
+        <MappingFragment StoreEntitySet="tbl_OrganizatorFaaliyetTuru">
+          <ScalarProperty Name="oFaaliyetTuruId" ColumnName="oFaaliyetTuruId" />
+          <ScalarProperty Name="oId" ColumnName="oId" />
+          <ScalarProperty Name="faaliyetTuruId" ColumnName="faaliyetTuruId" />
+          <ScalarProperty Name="diger" ColumnName="diger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_OrganizatorFirma">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_OrganizatorFirma">
+        <MappingFragment StoreEntitySet="tbl_OrganizatorFirma">
+          <ScalarProperty Name="oId" ColumnName="oId" />
+          <ScalarProperty Name="oFirmaAdi" ColumnName="oFirmaAdi" />
+          <ScalarProperty Name="oWebSite" ColumnName="oWebSite" />
+          <ScalarProperty Name="oTelefon" ColumnName="oTelefon" />
+          <ScalarProperty Name="oFax" ColumnName="oFax" />
+          <ScalarProperty Name="oMail" ColumnName="oMail" />
+          <ScalarProperty Name="oResimUrl" ColumnName="oResimUrl" />
+          <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+          <ScalarProperty Name="ilceId" ColumnName="ilceId" />
+          <ScalarProperty Name="SemtMahId" ColumnName="SemtMahId" />
+          <ScalarProperty Name="oCalisanSayisi" ColumnName="oCalisanSayisi" />
+          <ScalarProperty Name="oOnay" ColumnName="oOnay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_OrganizatorFirmaCalisanlar">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_OrganizatorFirmaCalisanlar">
+        <MappingFragment StoreEntitySet="tbl_OrganizatorFirmaCalisanlar">
+          <ScalarProperty Name="oCalisanlarId" ColumnName="oCalisanlarId" />
+          <ScalarProperty Name="oId" ColumnName="oId" />
+          <ScalarProperty Name="kisiId" ColumnName="kisiId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_OrganizatorKatildigiFuarlar">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_OrganizatorKatildigiFuarlar">
+        <MappingFragment StoreEntitySet="tbl_OrganizatorKatildigiFuarlar">
+          <ScalarProperty Name="oKatildigiFuarlarId" ColumnName="oKatildigiFuarlarId" />
+          <ScalarProperty Name="oId" ColumnName="oId" />
+          <ScalarProperty Name="fuarId" ColumnName="fuarId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Pozisyon">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_Pozisyon">
+        <MappingFragment StoreEntitySet="tbl_Pozisyon">
+          <ScalarProperty Name="pozisyonId" ColumnName="pozisyonId" />
+          <ScalarProperty Name="pozisyonAdi" ColumnName="pozisyonAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_UrunGruplari">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_UrunGruplari">
+        <MappingFragment StoreEntitySet="tbl_UrunGruplari">
+          <ScalarProperty Name="urunId" ColumnName="urunId" />
+          <ScalarProperty Name="urunGrupAdi" ColumnName="urunGrupAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ZiyaretciFaaliyetAlani">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_ZiyaretciFaaliyetAlani">
+        <MappingFragment StoreEntitySet="tbl_ZiyaretciFaaliyetAlani">
+          <ScalarProperty Name="zFaaliyetAlaniId" ColumnName="zFaaliyetAlaniId" />
+          <ScalarProperty Name="zId" ColumnName="zId" />
+          <ScalarProperty Name="faaliyetAlaniId" ColumnName="faaliyetAlaniId" />
+          <ScalarProperty Name="diger" ColumnName="diger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ZiyaretciFaaliyetTuru">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_ZiyaretciFaaliyetTuru">
+        <MappingFragment StoreEntitySet="tbl_ZiyaretciFaaliyetTuru">
+          <ScalarProperty Name="zFaaliyetTuruId" ColumnName="zFaaliyetTuruId" />
+          <ScalarProperty Name="zId" ColumnName="zId" />
+          <ScalarProperty Name="faaliyetTuruId" ColumnName="faaliyetTuruId" />
+          <ScalarProperty Name="diger" ColumnName="diger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ZiyaretciFirma">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_ZiyaretciFirma">
+        <MappingFragment StoreEntitySet="tbl_ZiyaretciFirma">
+          <ScalarProperty Name="zId" ColumnName="zId" />
+          <ScalarProperty Name="zFirmaAdi" ColumnName="zFirmaAdi" />
+          <ScalarProperty Name="zWebSiteUrl" ColumnName="zWebSiteUrl" />
+          <ScalarProperty Name="zTelefon" ColumnName="zTelefon" />
+          <ScalarProperty Name="zFax" ColumnName="zFax" />
+          <ScalarProperty Name="zMail" ColumnName="zMail" />
+          <ScalarProperty Name="zResimUrl" ColumnName="zResimUrl" />
+          <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+          <ScalarProperty Name="ilceId" ColumnName="ilceId" />
+          <ScalarProperty Name="SemtMahId" ColumnName="SemtMahId" />
+          <ScalarProperty Name="zCalisanSayisi" ColumnName="zCalisanSayisi" />
+          <ScalarProperty Name="zOnay" ColumnName="zOnay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ZiyaretciFirmaCalisanlar">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_ZiyaretciFirmaCalisanlar">
+        <MappingFragment StoreEntitySet="tbl_ZiyaretciFirmaCalisanlar">
+          <ScalarProperty Name="zCalisanlarId" ColumnName="zCalisanlarId" />
+          <ScalarProperty Name="zId" ColumnName="zId" />
+          <ScalarProperty Name="kisiId" ColumnName="kisiId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ZiyaretciIlgilendigiUrun">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_ZiyaretciIlgilendigiUrun">
+        <MappingFragment StoreEntitySet="tbl_ZiyaretciIlgilendigiUrun">
+          <ScalarProperty Name="zIlgilendigiUrunId" ColumnName="zIlgilendigiUrunId" />
+          <ScalarProperty Name="zId" ColumnName="zId" />
+          <ScalarProperty Name="urunId" ColumnName="urunId" />
+          <ScalarProperty Name="diger" ColumnName="diger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ZiyaretciKatildigiFuarlar">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_ZiyaretciKatildigiFuarlar">
+        <MappingFragment StoreEntitySet="tbl_ZiyaretciKatildigiFuarlar">
+          <ScalarProperty Name="zKatildigiFuarlarId" ColumnName="zKatildigiFuarlarId" />
+          <ScalarProperty Name="zId" ColumnName="zId" />
+          <ScalarProperty Name="fuarId" ColumnName="fuarId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ZiyaretciKatilimAmaci">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_ZiyaretciKatilimAmaci">
+        <MappingFragment StoreEntitySet="tbl_ZiyaretciKatilimAmaci">
+          <ScalarProperty Name="zKatilimAmacId" ColumnName="zKatilimAmacId" />
+          <ScalarProperty Name="zId" ColumnName="zId" />
+          <ScalarProperty Name="amacId" ColumnName="amacId" />
+          <ScalarProperty Name="diger" ColumnName="diger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ZiyaretciProfil">
+      <EntityTypeMapping TypeName="FuarDatabaseModel.tbl_ZiyaretciProfil">
+        <MappingFragment StoreEntitySet="tbl_ZiyaretciProfil">
+          <ScalarProperty Name="zProfilId" ColumnName="zProfilId" />
+          <ScalarProperty Name="zProfilAdi" ColumnName="zProfilAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

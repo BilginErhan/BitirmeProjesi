@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "FuarKapsamEkle";
+    Layout = "~/Views/Shared/_LayoutorgPanel.cshtml";
+}
+
+<h2>FuarKapsamEkle</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>tbl_FuarKapsamAlani</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.Label("Fuar Seç", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("fuarSec", (List<SelectListItem>)ViewBag.fuarlar,"Fuar Seç", htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label( "Fuar Kapsam Analanı", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("faaliyetAlaniId", (List<SelectListItem>)ViewBag.falan, htmlAttributes: new { @class = "form-control multiselect", @multiple="multiple"})
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Fuar Kapsam Türü", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("faaliyetTuruId", (List<SelectListItem>)ViewBag.ftur, htmlAttributes: new { @class = "form-control multiselect", @multiple = "multiple" })
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Güncelle" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#faaliyetAlaniId').multiselect({
+                enableFiltering: true,
+                filterPlaceholder: 'Search for something...'
+            });
+            $('#faaliyetTuruId').multiselect({
+                enableFiltering: true,
+                filterPlaceholder: 'Search for something...'
+            });
+
+
+            //İlçe getime fonksiyonu
+            $('#fuarSec').change(function () {
+                //ilçe dropdownlist içerisini boşaltma
+                var x = document.getElementById("faaliyetAlaniId");
+                var y = document.getElementById("faaliyetTuruId");
+
+                for (var q = x.options.length - 1; q >= 0; q--) {
+                    x.options[q].selected = false;
+                }
+                for (var q = y.options.length - 1; q >= 0; q--) {
+                    y.options[q].selected = false;
+                }
+
+                var fuarSec = $(this).val();
+
+                if (fuarSec != null && fuarSec != '') {
+
+                    //Seçili Fuar kapsam alanları getirildi
+                    //ajax içerisinde selected true yapıldı
+                    //faaliyetAlaniId yeniden inşa edildi
+                    $.ajax({
+                        type: "post",
+                        url: '@Url.Action("fuarKapmsamAlaniGetir", "Organizator")',
+                    data: { fuarSec: fuarSec },
+                    success: function (kAlan) {
+                        for (var j = x.options.length - 1; j >= 0; j--) {
+                            $.each(kAlan, function (index, i) {
+                                if (x.options[j].value == i.faaliyetAlaniId)
+                                        x.options[j].selected = true;
+                            });
+                        }
+                        $('#faaliyetAlaniId').multiselect('rebuild')
+
+
+                    },
+                    error: function () {
+
+                        alert("Hata");
+                    },
+                    beforeSend: function () {
+
+                    },
+                    complete: function () {
+
+                    }
+
+
+                    });
+                    //Seçili Fuar kapsam türü getirildi
+                    //ajax içerisinde selected true yapıldı
+                    //faaliyetTuruId yeniden inşa edildi
+                    $.ajax({
+                    type: "post",
+                    url: '@Url.Action("fuarKapmsamTurGetir", "Organizator")',
+                    data: { fuarSec: fuarSec },
+                    success: function (kTur) {
+                        for (var j = y.options.length - 1; j >= 0; j--) {
+                            $.each(kTur, function (ind, i) {
+                                if (y.options[j].value == i.faaliyetTuruId)
+                                    y.options[j].selected = true;
+                            });
+                        }
+                        $('#faaliyetTuruId').multiselect('rebuild')
+
+
+                    },
+                    error: function () {
+
+                        alert("Hata");
+                    },
+                    beforeSend: function () {
+
+                    },
+                    complete: function () {
+
+                    }
+
+
+                });
+            }
+        });
+
+        });
+
+
+    </script>
+}
